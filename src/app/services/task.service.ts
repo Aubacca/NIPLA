@@ -1,27 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
+import { Observable } from 'rxjs/Observable';
+
+import 'rxjs/add/operator/do';
+
 @Injectable()
 export class TaskService {
+//  private url_tasks = 'http://www.mocky.io/v2/59512cfc12000078128c7ab3';
+  private url_tasks = 'assets/tasks.json';
 
-  constructor(private http: Http) { }
+  people: any[];
 
-  getTasks(): any[] {
-    return TASKS;
-  };
+  constructor(private http: Http) {
+  }
 
-  private getNextPartyId(): Promise<number> {
-    return new Promise((resolve, reject) => {
-      let partyId = localStorage.get('partyId') as number;
-      partyId = typeof partyId === 'undefined' ? 1 : ++partyId;
-      localStorage.set('partyId', partyId);
-      resolve(partyId);
-    });
-  }  
+  getTasks(): Observable<any> {
+    const headers = new Headers();
+    headers.append('Access-Control-Allow-Headers', 'Content-Type');
+    headers.append('Access-Control-Allow-Methods', 'GET');
+    headers.append('Access-Control-Allow-Origin', '*');
+    return this.http.get(this.url_tasks, headers)
+      .do(res => console.log('res:', res))
+      // Call map on the response observable to get the parsed people object
+      .map(res => res.json());
+  }
 }
-
-const TASKS:any[] = [
-  {id: 0, name: 'ADD_INFO', data: 'Request Task - 1'},
-  {id: 1, name: 'ADD_INFO', data: 'Request Task - 2'},
-  {id: 2, name: 'ADD_INFO', data: 'Request Task - 3'},
-  ];
