@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective } from 'ng2-table/ng2-table';
+
 
 import { TaskService } from '../../services/task.service';
 
@@ -15,7 +17,7 @@ export class TaskListComponent implements OnInit {
 
   ngOnInit() {
     this.taskService.getTasks()
-      .subscribe(tasks => this.taskList = tasks);
+      .subscribe(tasks => {this.taskList = tasks;});
   }
 
 }

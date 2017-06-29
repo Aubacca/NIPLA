@@ -15,10 +15,12 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a [routerLink]="['/']">Home</a></li>
+          <li><a [routerLink]="['/']" [routerLinkActive]="['active']">Home</a></li>
           <li><a [routerLink]="['/coco']" [routerLinkActive]="['active']">Coordination Cockpit</a></li>
           <li><a [routerLink]="['/imco']" [routerLinkActive]="['is-active']">Implementation Cockpit</a></li>
           <li><a [routerLink]="['/tali']" routerLinkActive="active-link">Task List</a></li>
+          <li><a [routerLink]="['/tableDemo']" routerLinkActive="active-link">Table Demo</a></li>
+          <li><a [routerLink]="['/dataTable']" routerLinkActive="active-link">Datatable Demo</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">

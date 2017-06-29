@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>ng2-table</h3>
+  </div>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <input *ngIf="config.filtering" placeholder="Filter all columns"
+              [ngTableFiltering]="config.filtering"
+              class="form-control"
+              (tableChanged)="onChangeTable(config)"/>
+      </div>
+    </div>
+    <br>
+
+    <pagination *ngIf="config.paging"
+                class="pagination-sm"
+                [(ngModel)]="page"
+                [totalItems]="length"
+                [itemsPerPage]="itemsPerPage"
+                [maxSize]="maxSize"
+                [boundaryLinks]="true"
+                [rotate]="false"
+                (pageChanged)="onChangeTable(config, $event)"
+                (numPages)="numPages = $event">
+    </pagination>
+    <ng-table [config]="config.sorting"
+              (tableChanged)="onChangeTable(config)"
+              (cellClicked)="onCellClick($event)"
+              [rows]="rows" [columns]="columns">
+    </ng-table>
+
+    <!--
+    <pagination *ngIf="config.paging"
+                class="pagination-sm"
+                [(ngModel)]="page"
+                [totalItems]="length"
+                [itemsPerPage]="itemsPerPage"
+                [maxSize]="maxSize"
+                [boundaryLinks]="true"
+                [rotate]="false"
+                (pageChanged)="onChangeTable(config, $event)"
+                (numPages)="numPages = $event">
+    </pagination>
+    -->
+    <pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre>
+  </div>
+</div>
+
+
