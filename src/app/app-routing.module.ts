@@ -12,7 +12,8 @@ import { Ng2DatatableComponent } from './ng2-datatable/ng2-datatable.component';
 const routes: Routes = [
   {path: '', children: [], component: HomeComponent},
   {path: 'coco', component: CocoComponent},
-  {path: 'corq/:id', component: CorqComponent},
+  {path: 'corq-task/:id', component: CorqComponent},
+  {path: 'corq/:request', component: CorqComponent},
   {path: 'tali', component: TaliComponent},
   {path: 'imco', component: ImcoComponent},
   {path: 'tableDemo', component: Ng2TableDemoComponent},

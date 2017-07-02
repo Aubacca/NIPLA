@@ -48,4 +48,10 @@ export class TaskService {
       // Call map on the response observable to get the parsed people object
       .map(res => res.json());
   }
+
+  public getTaskById(taskId){
+    console.log('s taskId=', taskId);
+    return this.http.get(this.url_tasks)
+      .map(res => res.json());
+  }
 }

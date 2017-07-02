@@ -1,3 +1,67 @@
+<table class="table table-striped"
+  [mfData]="taskList" #mf="mfDataTable"
+  [mfActivePage]="3"
+  [mfRowsOnPage]="5">
+  <thead>
+    <tr>
+      <th>
+        <mfDefaultSorter by="TYPE">Type</mfDefaultSorter>
+      </th>
+      <th>
+        <mfDefaultSorter by="NAME">Name</mfDefaultSorter>
+      </th>
+      <th>
+        <mfDefaultSorter by="FG">FG</mfDefaultSorter>
+      </th>
+      <th>
+        <mfDefaultSorter by="TASK_OWNER">Task Owner</mfDefaultSorter>
+      </th>
+      <th>
+        <mfDefaultSorter by="REQUEST">Request</mfDefaultSorter>
+      </th>
+      <th>
+        <mfDefaultSorter by="PRIORITY">Priority</mfDefaultSorter>
+      </th>
+      <th>
+        <mfDefaultSorter by="STATUS">Priority</mfDefaultSorter>
+      </th>
+      <th>
+        <mfDefaultSorter by="CREATION_DATE">Creation</mfDefaultSorter>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of mf.data">
+        <td><a [routerLink]="['/corq-task', task.ID]" [queryParams]="{debug: true}">{{task.TYPE}}</a></td>
+        <td>{{task.NAME}}</td>
+        <td>{{task.FG}}</td>
+        <td class="text-left">{{task.TASK_OWNER}}</td>
+        <td><a [routerLink]="['/corq', task.REQUEST]" [queryParams]="{debug: true}">{{task.REQUEST}}</a></td>
+        <td>{{task.PRIORITY | uppercase}}</td>
+        <td>{{task.STATUS}}</td>
+        <td>{{task.CREATION_DATE}}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="8">
+        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25, 50]"></mfBootstrapPaginator>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<hr>
+
+<ng-table [config]="config"
+          (tableChanged)="onChangeTable(config)"
+          (cellClicked)="onCellClick($event)"
+          [rows]="rows" [columns]="columns">
+</ng-table>
+
+
+<!--
+<hr>
 
 <ul>
   <li *ngFor="let task of taskList"><a [routerLink]="['/corq', task.ID]">{{task.TYPE}}</a> - {{task.NAME}} - FG: {{task.FG}}</li>
@@ -6,3 +70,4 @@
 <hr>
 
 {{taskList | json}}
+-->
