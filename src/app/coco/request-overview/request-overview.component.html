@@ -1,0 +1,55 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h5><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Requests Overview</h5>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped"
+      [mfData]="requestList" #mf="mfDataTable"
+      [mfActivePage]="3"
+      [mfRowsOnPage]="5">
+      <thead>
+        <tr>
+          <th>
+            <mfDefaultSorter by="REQUEST">Request</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="NAME">Responsible</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="FG">FG</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="TASK_OWNER">Task Owner</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="PRIORITY">Priority</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="STATUS">Status</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="CREATION_DATE">Creation</mfDefaultSorter>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of mf.data">
+          <td><a [routerLink]="['/corq', task.REQUEST]" [queryParams]="{debug: true}">{{task.REQUEST}}</a></td>
+          <td>{{task.NAME}}</td>
+          <td>{{task.FG}}</td>
+          <td>{{task.TASK_OWNER}}</td>
+          <td>{{task.PRIORITY | uppercase}}</td>
+          <td>{{task.STATUS}}</td>
+          <td>{{task.CREATION_DATE}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="8">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25, 50]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

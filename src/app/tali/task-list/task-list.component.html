@@ -8,22 +8,22 @@
         <mfDefaultSorter by="TYPE">Type</mfDefaultSorter>
       </th>
       <th>
-        <mfDefaultSorter by="NAME">Name</mfDefaultSorter>
-      </th>
-      <th>
-        <mfDefaultSorter by="FG">FG</mfDefaultSorter>
-      </th>
-      <th>
         <mfDefaultSorter by="TASK_OWNER">Task Owner</mfDefaultSorter>
       </th>
       <th>
         <mfDefaultSorter by="REQUEST">Request</mfDefaultSorter>
       </th>
       <th>
+        <mfDefaultSorter by="FG">FG</mfDefaultSorter>
+      </th>
+      <th>
+        <mfDefaultSorter by="NAME">Request Owner</mfDefaultSorter>
+      </th>
+      <th>
         <mfDefaultSorter by="PRIORITY">Priority</mfDefaultSorter>
       </th>
       <th>
-        <mfDefaultSorter by="STATUS">Priority</mfDefaultSorter>
+        <mfDefaultSorter by="STATUS">Status</mfDefaultSorter>
       </th>
       <th>
         <mfDefaultSorter by="CREATION_DATE">Creation</mfDefaultSorter>
@@ -33,10 +33,10 @@
   <tbody>
     <tr *ngFor="let task of mf.data">
         <td><a [routerLink]="['/tasks/additionalInformation', task.ID]" [queryParams]="{debug: true}">{{task.TYPE}}</a></td>
-        <td>{{task.NAME}}</td>
-        <td>{{task.FG}}</td>
         <td class="text-left">{{task.TASK_OWNER}}</td>
         <td><a [routerLink]="['/corq', task.REQUEST]" [queryParams]="{debug: true}">{{task.REQUEST}}</a></td>
+        <td>{{task.NAME}}</td>
+        <td>{{task.FG}}</td>
         <td>{{task.PRIORITY | uppercase}}</td>
         <td>{{task.STATUS}}</td>
         <td>{{task.CREATION_DATE}}</td>
