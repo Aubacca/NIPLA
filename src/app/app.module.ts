@@ -5,8 +5,9 @@ import { HttpModule } from '@angular/http';
 
 import { AlertModule } from 'ng2-bootstrap';
 import { PaginationModule } from 'ng2-bootstrap/pagination';
+import { AccordionModule } from 'ng2-bootstrap/accordion';
 import { Ng2TableModule } from 'ng2-table/ng2-table';
-import {DataTableModule} from "angular2-datatable";
+import { DataTableModule } from "angular2-datatable";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { CorqComponent } from './coco/corq/corq.component';
 import { Ng2TableDemoComponent } from './ng2-table-demo/ng2-table-demo.component';
 import { Ng2DatatableComponent } from './ng2-datatable/ng2-datatable.component';
 import { HomeComponent } from './home/home.component';
+import { AdditionalInformationComponent } from './tasks/additional-information/additional-information.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { HomeComponent } from './home/home.component';
     CorqComponent,
     Ng2TableDemoComponent,
     Ng2DatatableComponent,
-    HomeComponent
+    HomeComponent,
+    AdditionalInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     AlertModule.forRoot(),
     PaginationModule.forRoot(),
+    AccordionModule.forRoot(),
     Ng2TableModule,
     DataTableModule
   ],

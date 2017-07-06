@@ -54,4 +54,12 @@ export class TaskService {
     return this.http.get(this.url_tasks)
       .map(res => res.json());
   }
+
+  public getTask(taskId: string) {
+    return this.http.get(this.url_tasks)
+      .map(res => res.json()
+        .filter(task => {
+          return task.ID === taskId;
+        }));
+  }
 }

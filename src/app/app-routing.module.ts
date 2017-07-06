@@ -8,6 +8,7 @@ import { TaliComponent } from './tali/tali.component';
 import { ImcoComponent } from './imco/imco.component';
 import { Ng2TableDemoComponent } from './ng2-table-demo/ng2-table-demo.component';
 import { Ng2DatatableComponent } from './ng2-datatable/ng2-datatable.component';
+import { AdditionalInformationComponent } from './tasks/additional-information/additional-information.component';
 
 const routes: Routes = [
   {path: '', children: [], component: HomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'imco', component: ImcoComponent},
   {path: 'tableDemo', component: Ng2TableDemoComponent},
   {path: 'dataTable', component: Ng2DatatableComponent},
+  {path: 'tasks/additionalInformation/:taskId', component: AdditionalInformationComponent},
 ];
 
 @NgModule({

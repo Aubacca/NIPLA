@@ -32,7 +32,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let task of mf.data">
-        <td><a [routerLink]="['/corq-task', task.ID]" [queryParams]="{debug: true}">{{task.TYPE}}</a></td>
+        <td><a [routerLink]="['/tasks/additionalInformation', task.ID]" [queryParams]="{debug: true}">{{task.TYPE}}</a></td>
         <td>{{task.NAME}}</td>
         <td>{{task.FG}}</td>
         <td class="text-left">{{task.TASK_OWNER}}</td>
@@ -50,24 +50,3 @@
     </tr>
   </tfoot>
 </table>
-
-<hr>
-
-<ng-table [config]="config"
-          (tableChanged)="onChangeTable(config)"
-          (cellClicked)="onCellClick($event)"
-          [rows]="rows" [columns]="columns">
-</ng-table>
-
-
-<!--
-<hr>
-
-<ul>
-  <li *ngFor="let task of taskList"><a [routerLink]="['/corq', task.ID]">{{task.TYPE}}</a> - {{task.NAME}} - FG: {{task.FG}}</li>
-</ul>
-
-<hr>
-
-{{taskList | json}}
--->

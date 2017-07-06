@@ -1,0 +1,93 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div *ngIf="taskDeatil">
+      <h3><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Additional Information - Request <b>{{taskDeatil.REQUEST}}</b></h3>
+    </div>
+  </div>
+  <div class="panel-body">
+    <b>Task Details</b>
+    <div *ngIf="taskDeatil">
+      <div class="row">
+        <div class="col-xs-3">Task Type: <b>Additional Information</b></div>
+        <div class="col-xs-3">Owner: <b>{{taskDeatil.TASK_OWNER}}</b></div>
+        <div class="col-xs-3">Priority: <b>{{taskDeatil.PRIORITY}}</b></div>
+        <div class="col-xs-3">Due Date: <b>{{dueDate | date:'dd/MM/yyyy'}}</b></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">Task ID: <b>{{taskDeatil.ID}}</b></div>
+        <div class="col-xs-3">Status: <b>{{taskDeatil.STATUS}}</b></div>
+        <div class="col-xs-3">Receive Date: <b>{{taskDeatil.CREATION_DATE}}</b></div>
+      </div>
+    </div>
+    <hr>
+    <accordion>
+      <accordion-group [isOpen]="true" heading="Request Details">
+        <div class="row">
+          <div class="col-xs-4">Request: <b *ngIf="taskDeatil"><a [routerLink]="['/corq', taskDeatil.REQUEST]">{{taskDeatil.REQUEST}}</a></b></div>
+          <div class="col-xs-4">Priority: <b>Low</b></div>
+          <div class="col-xs-4">Target BoA Deployment Date: <b>21/12/2017</b></div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">Reason for Request: <b>bla bla</b></div>
+          <div class="col-xs-4">Country: <b>Switzerland</b></div>
+          <div class="col-xs-4">Status: <b>Low</b></div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">FG(s): <b>1234567, 9876543, 345678</b></div>
+        </div>
+      </accordion-group>
+      <accordion-group [isOpen]="true" #group>
+        <div accordion-heading>
+          <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Question
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="5" id="question" disabled>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sed inventore voluptatibus tempora aspernatur ut aperiam, voluptates, tempore debitis officiis odio mollitia quidem quod eaque animi assumenda veritatis adipisci at?
+          </textarea>
+        </div> 
+      </accordion-group>
+      <accordion-group [isOpen]="false" #group>
+        <div accordion-heading>
+          <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Assigned Documents for Question
+        </div>
+        <div>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="#">Cras justo odio</a> </li>
+            <li class="list-group-item"><a href="#">Dapibus ac facilisis in</a> </li>
+            <li class="list-group-item"><a href="#">Morbi leo risus</a> </li>
+            <li class="list-group-item"><a href="#">Porta ac consectetur ac</a> </li>
+            <li class="list-group-item"><a href="#">Vestibulum at eros</a> </li>
+          </ul>
+        </div>
+      </accordion-group>
+    </accordion>
+    <hr>
+    <accordion>
+      <accordion-group [isOpen]="true" #group>
+        <div accordion-heading>
+          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Answer
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="5" id="answer"></textarea>
+        </div> 
+      </accordion-group>
+      <accordion-group [isOpen]="false" #group>
+        <div accordion-heading>
+          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Assigned Documents for Answer
+        </div>
+        <p></p>
+      </accordion-group>
+    </accordion>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-xs-6"><button type="button" class="btn btn-default pull-left" (click)="goToTaskList($event)">Close without Saving</button></div>
+      <div class="col-xs-6"><button type="submit" class="btn btn-primary pull-right" (click)="goToTaskList($event)">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Submit
+      </button></div>
+    </div>
+  </div>
+</div>
+
+<div class="well well-primary">
+  taskDeatil: {{ taskDeatil | json }}
+</div>
