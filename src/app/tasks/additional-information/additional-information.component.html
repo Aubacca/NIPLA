@@ -1,7 +1,7 @@
 <div class="panel panel-info">
   <div class="panel-heading">
     <div *ngIf="taskDeatil">
-      <h3><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Additional Information - Request <b>{{taskDeatil.REQUEST}}</b></h3>
+      <h4><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Additional Information - Request <b>{{taskDeatil.REQUEST}}</b></h4>
     </div>
   </div>
   <div class="panel-body">
@@ -23,7 +23,7 @@
     <accordion>
       <accordion-group [isOpen]="true" heading="Request Details">
         <div class="row">
-          <div class="col-xs-4">Request: <b *ngIf="taskDeatil"><a [routerLink]="['/corq', taskDeatil.REQUEST]">{{taskDeatil.REQUEST}}</a></b></div>
+          <div class="col-xs-4">Request: <b *ngIf="taskDeatil"><a [routerLink]="['/coco', 'requestDetails', taskDeatil.REQUEST]">{{taskDeatil.REQUEST}}</a></b></div>
           <div class="col-xs-4">Priority: <b>Low</b></div>
           <div class="col-xs-4">Target BoA Deployment Date: <b>21/12/2017</b></div>
         </div>

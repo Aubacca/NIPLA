@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TaskService } from '../../services/task.service';
+import { RequestService } from '../../services/request.service';
 
 @Component({
   selector: 'app-request-overview',
@@ -12,8 +12,9 @@ export class RequestOverviewComponent implements OnInit {
   public columns:Array<any> = [
     {title: 'Request', name: 'REQUEST', sort: 'asc',  filtering: {filterString: '', placeholder: 'Filter by Request'}, className: ['office-header', 'text-success']},
     {title: 'Name', name: 'NAME', filtering: {filterString: '', placeholder: 'Filter by Name'}},
+    {title: 'Type', name: 'REQUEST_TYPE', filtering: {filterString: '', placeholder: 'Filter by Type'}},
     {title: 'FG', name: 'FG', filtering: {filterString: '', placeholder: 'Filter by FG'}},
-    {title: 'Task Owner', name: 'TASK_OWNER', filtering: {filterString: '', placeholder: 'Filter by Ower'}},
+    {title: 'Request Owner', name: 'REQUEST_OWNER', filtering: {filterString: '', placeholder: 'Filter by Ower'}},
     {title: 'Priority', name: 'PRIORITY', filtering: {filterString: '', placeholder: 'Filter by Priority'}},
     {title: 'Status', name: 'STATUS', filtering: {filterString: '', placeholder: 'Filter by Status'}},
   ];
@@ -27,14 +28,14 @@ export class RequestOverviewComponent implements OnInit {
     className: ['table-striped', 'table-bordered']
   };
 
-  constructor(private requestService: TaskService) { }
+  constructor(private requestService: RequestService) { }
 
   ngOnInit() {
     this.loadRequests();
   }
 
   private loadRequests() {
-    this.requestService.getTasks()
+    this.requestService.getRequests()
       .subscribe(requests => {
         this.requestList = requests;
         this.onChangeTable(this.config);

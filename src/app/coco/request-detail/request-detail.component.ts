@@ -4,11 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { RequestService } from '../../services/request.service';
 
 @Component({
-  selector: 'app-corq',
-  templateUrl: './corq.component.html',
-  styleUrls: ['./corq.component.css']
+  selector: 'app-request-detail',
+  templateUrl: './request-detail.component.html',
+  styleUrls: ['./request-detail.component.css']
 })
-export class CorqComponent implements OnInit {
+export class RequestDetailComponent implements OnInit {
   public requestDetails: any = undefined;
 
   constructor(
@@ -19,7 +19,7 @@ export class CorqComponent implements OnInit {
     this.route.params.subscribe(
       params => {
         console.log('CorqComponent params=', params);
-        this.loadRequestDetails(params.request);
+        this.loadRequestDetails(params.requestId);
       }
       );
   }

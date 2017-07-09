@@ -17,6 +17,7 @@ import { ImcoComponent } from './imco/imco.component';
 import { TaliComponent } from './tali/tali.component';
 import { TaskListComponent } from './tali/task-list/task-list.component';
 
+import { RequestService } from './services/request.service';
 import { TaskService } from './services/task.service';
 import { CorqComponent } from './coco/corq/corq.component';
 import { Ng2TableDemoComponent } from './ng2-table-demo/ng2-table-demo.component';
@@ -27,6 +28,7 @@ import { ActionOverviewComponent } from './coco/action-overview/action-overview.
 import { ParentOverviewComponent } from './coco/parent-overview/parent-overview.component';
 import { RequestOverviewComponent } from './coco/request-overview/request-overview.component';
 import { BundlingOverviewComponent } from './coco/bundling-overview/bundling-overview.component';
+import { RequestDetailComponent } from './coco/request-detail/request-detail.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { BundlingOverviewComponent } from './coco/bundling-overview/bundling-ove
     ActionOverviewComponent,
     ParentOverviewComponent,
     RequestOverviewComponent,
-    BundlingOverviewComponent
+    BundlingOverviewComponent,
+    RequestDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,7 @@ import { BundlingOverviewComponent } from './coco/bundling-overview/bundling-ove
     Ng2TableModule,
     DataTableModule
   ],
-  providers: [TaskService],
+  providers: [RequestService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,18 +1,18 @@
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 *ngIf="taskDetails"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span> Coordination Cockpit - Request <b>{{taskDetails.REQUEST}}</b></h3>
+    <h4><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span> TO BE DELETED!!! Coordination Cockpit - Request <b *ngIf="requestDetails">{{requestDetails.REQUEST}}</b></h4>
   </div>
   <div class="panel-body">
-    <div *ngIf="taskDetails">
-      <div>{{taskDetails.ID}}</div>
-      <div>{{taskDetails.REQUEST}}</div>
-      <div>{{taskDetails.NAME}}</div>
-      <div>{{taskDetails.TASK_OWNER}}</div>
-      <div>{{taskDetails.STATUS}}</div>
-      <div>{{taskDetails.PRIORITY}}</div>
-      <div>{{taskDetails.CREATION_DATE}}</div>
+    <div *ngIf="requestDetails">
+      <div>{{requestDetails.ID}}</div>
+      <div>{{requestDetails.REQUEST}}</div>
+      <div>{{requestDetails.NAME}}</div>
+      <div>{{requestDetails.TASK_OWNER}}</div>
+      <div>{{requestDetails.STATUS}}</div>
+      <div>{{requestDetails.PRIORITY}}</div>
+      <div>{{requestDetails.CREATION_DATE}}</div>
     </div>
   </div>
 </div>
 
-{{ taskDetails | json }}
+{{ requestDetails | json }}

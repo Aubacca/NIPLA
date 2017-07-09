@@ -8,7 +8,7 @@ import 'rxjs/add/operator/do';
 @Injectable()
 export class TaskService {
 //  private url_tasks = 'http://www.mocky.io/v2/59512cfc12000078128c7ab3';
-  private url_tasks = 'assets/tasks.json';
+  private url_tasks = 'assets/alpin2-data.json';
 
   people: any[];
 
@@ -46,18 +46,18 @@ export class TaskService {
     return this.http.get(this.url_tasks, options)
 //      .do(res => console.log('res:', res))
       // Call map on the response observable to get the parsed people object
-      .map(res => res.json());
+      .map(res => res.json().tasks);
   }
 
   public getTaskById(taskId){
     console.log('s taskId=', taskId);
     return this.http.get(this.url_tasks)
-      .map(res => res.json());
+      .map(res => res.json().tasks);
   }
 
   public getTask(taskId: string) {
     return this.http.get(this.url_tasks)
-      .map(res => res.json()
+      .map(res => res.json().tasks
         .filter(task => {
           return task.ID === taskId;
         }));

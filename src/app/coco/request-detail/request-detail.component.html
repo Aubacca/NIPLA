@@ -1,0 +1,217 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h4><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span> Coordination Cockpit - Request <b *ngIf="requestDetails">{{requestDetails.REQUEST}}</b></h4>
+  </div>
+  <div class="panel-body">
+    <h5>Request Details</h5>
+    <div *ngIf="requestDetails" id="requestDetails">
+      <div class="row">
+        <div class="col-xs-12 col-md-3">Parent: <b>N/A</b></div>
+        <div class="col-xs-12 col-md-3">Bundled from: <b>N/A</b></div>
+        <div class="col-xs-12 col-md-3">Owner: <b>{{requestDetails.REQUEST_OWNER}}</b></div>
+        <div class="col-xs-12 col-md-3">Due Date: <b>{{requestDetails.CREATION_DATE}}</b></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-3">Request: <b>{{requestDetails.REQUEST}}</b></div>
+        <div class="col-xs-12 col-md-3">Country: <b>N/A</b></div>
+        <div class="col-xs-12 col-md-3">Assigne: <b>{{requestDetails.NAME}}</b></div>
+        <div class="col-xs-12 col-md-3">Receiving Date: <b>N/A</b></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-3">Reason for Request: <b>N/A</b></div>
+        <div class="col-xs-12 col-md-3">Request Type: <b>{{requestDetails.REQUEST_TYPE}}</b></div>
+        <div class="col-xs-12 col-md-3">Priority: <b>{{requestDetails.PRIORITY}}</b></div>
+        <div class="col-xs-12 col-md-3">Target BoA Dept. Date: <b>N/A</b></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-3">Status: <b>{{requestDetails.STATUS}}</b></div>
+        <div class="col-xs-12 col-md-3">Phase: <b>N/A</b></div>
+        <div class="col-xs-12 col-md-3">Progress: <b>N/A</b></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-3">Risk Printing: <input type="checkbox"> <b>N/A</b> <span class="glyphicon glyphicon-edit" aria-hidden="true"> </span></div>
+      </div>
+    </div>
+    <hr>
+    <div id="targetConfiguration">
+      <div class="tc-buttons">
+        <div class="row">
+          <div class="col-xs-12 col-md-4 pull-left">
+            <button type="button" class="btn btn-info">Current & Target Configuration</button>
+            <button type="button" class="btn btn-default">Only Target Configuration</button>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <button type="button" class="btn btn-info">PPMs per FG</button>
+            <button type="button" class="btn btn-default">FGs per PPM</button>
+            <button type="button" class="btn btn-default">Only FGs</button>
+            <button type="button" class="btn btn-default">Onyl PPMs</button>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <button type="button" class="btn btn-default  pull-right">Add FG</button>
+          </div>
+        </div>
+      </div>
+      <div class="tc-data">
+        <accordion>
+          <accordion-group #group>
+            <div accordion-heading>
+              <div class="row">
+                <div class="col-xs-1"><input type="checkbox"></div>
+                <div class="col-xs-1">Type <b>FG</b></div>
+                <div class="col-xs-1">ID <b>N/A</b></div>
+                <div class="col-xs-3">Product Family <b>N/A</b></div>
+                <div class="col-xs-1">PaCo ID <b>N/A</b></div>
+                <div class="col-xs-1">Norm Pack <b>N/A</b></div>
+                <div class="col-xs-2">MakeUp <b>N/A</b></div>
+                <div class="col-xs-2">Plant Spec. Mat. Status <b>N/A</b></div>
+              </div>
+            </div>
+            <div class="fg-details">
+              <div class="row">
+                <div class="col-xs-12 col-md-3">FG <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">DS Source <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3"><b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Predecessor <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">ACN <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">DP Source <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">New Shelf Life <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Old Price <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">FG Description <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Packaging Source <b>N/A</b></div>
+                <div class="col-xs-12 col-md-6">New Shelf Life <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">Country <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Site QP Release <b>N/A</b></div>
+                <div class="col-xs-12 col-md-6">2D ID/Material Codification <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">Target BoA Approval Date <b>N/A</b></div>
+              </div>
+            </div>
+          </accordion-group>
+          <accordion-group #group>
+            <div accordion-heading>
+              <div class="row">
+                <div class="col-xs-1"><input type="checkbox"></div>
+                <div class="col-xs-1">Type <b>FG</b></div>
+                <div class="col-xs-1">ID <b>N/A</b></div>
+                <div class="col-xs-3">Product Family <b>N/A</b></div>
+                <div class="col-xs-1">PaCo ID <b>N/A</b></div>
+                <div class="col-xs-1">Norm Pack <b>N/A</b></div>
+                <div class="col-xs-2">MakeUp <b>N/A</b></div>
+                <div class="col-xs-2">Plant Spec. Mat. Status <b>N/A</b></div>
+              </div>
+            </div>
+            <div class="fg-details">
+              <div class="row">
+                <div class="col-xs-12 col-md-3">FG <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">DS Source <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3"><b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Predecessor <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">ACN <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">DP Source <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">New Shelf Life <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Old Price <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">FG Description <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Packaging Source <b>N/A</b></div>
+                <div class="col-xs-12 col-md-6">New Shelf Life <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">Country <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Site QP Release <b>N/A</b></div>
+                <div class="col-xs-12 col-md-6">2D ID/Material Codification <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">Target BoA Approval Date <b>N/A</b></div>
+              </div>
+            </div>
+          </accordion-group>
+          <accordion-group #group>
+            <div accordion-heading>
+              <div class="row">
+                <div class="col-xs-1"><input type="checkbox"></div>
+                <div class="col-xs-1">Type <b>FG</b></div>
+                <div class="col-xs-1">ID <b>N/A</b></div>
+                <div class="col-xs-3">Product Family <b>N/A</b></div>
+                <div class="col-xs-1">PaCo ID <b>N/A</b></div>
+                <div class="col-xs-1">Norm Pack <b>N/A</b></div>
+                <div class="col-xs-2">MakeUp <b>N/A</b></div>
+                <div class="col-xs-2">Plant Spec. Mat. Status <b>N/A</b></div>
+              </div>
+            </div>
+            <div class="fg-details">
+              <div class="row">
+                <div class="col-xs-12 col-md-3">FG <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">DS Source <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3"><b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Predecessor <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">ACN <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">DP Source <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">New Shelf Life <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Old Price <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">FG Description <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Packaging Source <b>N/A</b></div>
+                <div class="col-xs-12 col-md-6">New Shelf Life <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">Country <b>N/A</b></div>
+                <div class="col-xs-12 col-md-3">Site QP Release <b>N/A</b></div>
+                <div class="col-xs-12 col-md-6">2D ID/Material Codification <b>N/A</b></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-3">Target BoA Approval Date <b>N/A</b></div>
+              </div>
+            </div>
+          </accordion-group>
+        </accordion>
+      </div>
+
+    </div>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-xs-6">
+        <span class="pull-left">
+          <button type="button" class="btn btn-danger">
+            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Cancel
+          </button>
+          <button type="button" class="btn btn-danger">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Withdrawal
+          </button>
+          <button type="button" class="btn btn-danger">
+            <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> Request Cancellation
+          </button>
+          <button type="button" class="btn btn-danger">
+            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Request Withdrawal
+          </button>
+        </span>
+      </div>
+      <div class="col-xs-6">
+        <span class="pull-right"> 
+          <button type="submit" class="btn btn-default">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Check Target Configuration
+          </button>
+          <button type="submit" class="btn btn-default">
+            <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Confirm Target Configuration
+          </button>
+          <button type="submit" class="btn btn-success">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Finalize Assessment
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

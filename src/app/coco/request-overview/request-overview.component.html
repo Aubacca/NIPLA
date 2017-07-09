@@ -10,16 +10,22 @@
       <thead>
         <tr>
           <th>
+            <mfDefaultSorter by="ID"><input type="checkbox" title="Mark to select/unselect all visible Requests"></mfDefaultSorter>
+          </th>
+          <th>
             <mfDefaultSorter by="REQUEST">Request</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="REQUEST_OWNER">Request Owner</mfDefaultSorter>
           </th>
           <th>
             <mfDefaultSorter by="NAME">Responsible</mfDefaultSorter>
           </th>
           <th>
-            <mfDefaultSorter by="FG">FG</mfDefaultSorter>
+            <mfDefaultSorter by="REQUEST_TYPE">Type</mfDefaultSorter>
           </th>
           <th>
-            <mfDefaultSorter by="TASK_OWNER">Task Owner</mfDefaultSorter>
+            <mfDefaultSorter by="FG">FG</mfDefaultSorter>
           </th>
           <th>
             <mfDefaultSorter by="PRIORITY">Priority</mfDefaultSorter>
@@ -33,14 +39,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let task of mf.data">
-          <td><a [routerLink]="['/corq', task.REQUEST]" [queryParams]="{debug: true}">{{task.REQUEST}}</a></td>
-          <td>{{task.NAME}}</td>
-          <td>{{task.FG}}</td>
-          <td>{{task.TASK_OWNER}}</td>
-          <td>{{task.PRIORITY | uppercase}}</td>
-          <td>{{task.STATUS}}</td>
-          <td>{{task.CREATION_DATE}}</td>
+        <tr *ngFor="let request of mf.data">
+          <td><input type="checkbox"> </td>
+          <td><a [routerLink]="['/coco/requestDetails', request.REQUEST]" [queryParams]="{debug: true}">{{request.REQUEST}}</a></td>
+          <td>{{request.REQUEST_OWNER}}</td>
+          <td>{{request.NAME}}</td>
+          <td>{{request.REQUEST_TYPE}}</td>
+          <td>{{request.FG}}</td>
+          <td>{{request.PRIORITY | uppercase}}</td>
+          <td>{{request.STATUS}}</td>
+          <td>{{request.CREATION_DATE}}</td>
         </tr>
       </tbody>
       <tfoot>
@@ -51,5 +59,27 @@
         </tr>
       </tfoot>
     </table>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-xs-6">
+        <span class="pull-left">
+          <button type="button" class="btn btn-danger">Decide on Cancellation</button>
+          <button type="button" class="btn btn-danger">Decide on Withdrawal</button>
+          <button type="button" class="btn btn-danger">Request Cancellation</button>
+          <button type="button" class="btn btn-danger">Request Withdrawal</button>
+        </span>
+      </div>
+      <div class="col-xs-6">
+        <span class="pull-right"> 
+          <button type="submit" class="btn btn-default">
+            <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Set Markers
+          </button>
+          <button type="submit" class="btn btn-default">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Claim
+          </button>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
