@@ -29,6 +29,7 @@ import { ParentOverviewComponent } from './coco/parent-overview/parent-overview.
 import { RequestOverviewComponent } from './coco/request-overview/request-overview.component';
 import { BundlingOverviewComponent } from './coco/bundling-overview/bundling-overview.component';
 import { RequestDetailComponent } from './coco/request-detail/request-detail.component';
+import { TechnicalAssessmentComponent } from './tasks/technical-assessment/technical-assessment.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { RequestDetailComponent } from './coco/request-detail/request-detail.com
     ParentOverviewComponent,
     RequestOverviewComponent,
     BundlingOverviewComponent,
-    RequestDetailComponent
+    RequestDetailComponent,
+    TechnicalAssessmentComponent
   ],
   imports: [
     BrowserModule,

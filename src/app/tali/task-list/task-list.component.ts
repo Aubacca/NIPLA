@@ -73,4 +73,19 @@ export class TaskListComponent implements OnInit {
       this.router.navigate(['/cord', data.row.REQUEST]);
     }
   }
+
+  public onTaskSelected(e, task) {
+    switch (task.TYPE) {
+      case 'Add. Info.':
+        this.router.navigate(['/tasks/additionalInformation', task.ID]);
+        break;
+    
+      case 'Tech. Assessment':
+        this.router.navigate(['/tasks/technicalAssessment', task.ID]);
+        break;
+    
+      default:
+        break;
+    }
+  }
 }

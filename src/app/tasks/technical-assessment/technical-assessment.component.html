@@ -1,0 +1,41 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div *ngIf="taskDetail">
+      <h4><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Technnical Assessment - Request <b>{{taskDetail.REQUEST}}</b></h4>
+    </div>
+  </div>
+  <div class="panel-body">
+    <b>Task Details</b>
+    <div *ngIf="taskDetail">
+      <div class="row">
+        <div class="col-xs-3">Task Type: <b>{{taskDetail.TYPE}}</b></div>
+        <div class="col-xs-3">Owner: <b>{{taskDetail.TASK_OWNER}}</b></div>
+        <div class="col-xs-3">Priority: <b>{{taskDetail.PRIORITY}}</b></div>
+        <div class="col-xs-3">Due Date: <b>{{dueDate | date:'dd/MM/yyyy'}}</b></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">Task ID: <b>{{taskDetail.ID}}</b></div>
+        <div class="col-xs-3">Status: <b>{{taskDetail.STATUS}}</b></div>
+        <div class="col-xs-3">Receive Date: <b>{{taskDetail.CREATION_DATE}}</b></div>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-xs-6"><button type="button" class="btn btn-default pull-left" (click)="goToTaskList($event)">Close without Saving</button></div>
+      <div class="col-xs-6">
+        <span class="pull-right">
+          <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save</button>
+          <button type="submit" class="btn btn-primary" (click)="goToTaskList($event)"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Submit</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="well well-primary">
+  taskDetail: {{ taskDetail | json }}
+</div>
+-->

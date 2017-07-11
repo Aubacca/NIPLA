@@ -1,29 +1,29 @@
 <div class="panel panel-info">
   <div class="panel-heading">
-    <div *ngIf="taskDeatil">
-      <h4><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Additional Information - Request <b>{{taskDeatil.REQUEST}}</b></h4>
+    <div *ngIf="taskDetail">
+      <h4><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Additional Information - Request <b>{{taskDetail.REQUEST}}</b></h4>
     </div>
   </div>
   <div class="panel-body">
     <b>Task Details</b>
-    <div *ngIf="taskDeatil">
+    <div *ngIf="taskDetail">
       <div class="row">
-        <div class="col-xs-3">Task Type: <b>Additional Information</b></div>
-        <div class="col-xs-3">Owner: <b>{{taskDeatil.TASK_OWNER}}</b></div>
-        <div class="col-xs-3">Priority: <b>{{taskDeatil.PRIORITY}}</b></div>
+        <div class="col-xs-3">Task Type: <b>{{taskDetail.TYPE}}</b></div>
+        <div class="col-xs-3">Owner: <b>{{taskDetail.TASK_OWNER}}</b></div>
+        <div class="col-xs-3">Priority: <b>{{taskDetail.PRIORITY}}</b></div>
         <div class="col-xs-3">Due Date: <b>{{dueDate | date:'dd/MM/yyyy'}}</b></div>
       </div>
       <div class="row">
-        <div class="col-xs-6">Task ID: <b>{{taskDeatil.ID}}</b></div>
-        <div class="col-xs-3">Status: <b>{{taskDeatil.STATUS}}</b></div>
-        <div class="col-xs-3">Receive Date: <b>{{taskDeatil.CREATION_DATE}}</b></div>
+        <div class="col-xs-6">Task ID: <b>{{taskDetail.ID}}</b></div>
+        <div class="col-xs-3">Status: <b>{{taskDetail.STATUS}}</b></div>
+        <div class="col-xs-3">Receive Date: <b>{{taskDetail.CREATION_DATE}}</b></div>
       </div>
     </div>
     <hr>
     <accordion>
       <accordion-group [isOpen]="true" heading="Request Details">
         <div class="row">
-          <div class="col-xs-4">Request: <b *ngIf="taskDeatil"><a [routerLink]="['/coco', 'requestDetails', taskDeatil.REQUEST]">{{taskDeatil.REQUEST}}</a></b></div>
+          <div class="col-xs-4">Request: <b *ngIf="taskDetail"><a [routerLink]="['/coco', 'requestDetails', taskDetail.REQUEST]">{{taskDetail.REQUEST}}</a></b></div>
           <div class="col-xs-4">Priority: <b>Low</b></div>
           <div class="col-xs-4">Target BoA Deployment Date: <b>21/12/2017</b></div>
         </div>
@@ -88,6 +88,8 @@
   </div>
 </div>
 
+<!--
 <div class="well well-primary">
-  taskDeatil: {{ taskDeatil | json }}
+  taskDetail: {{ taskDetail | json }}
 </div>
+-->

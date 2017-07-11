@@ -13,7 +13,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AdditionalInformationComponent implements OnInit {
   private taskId: string;
-  private taskDeatil: any = null;
+  private taskDetail: any = null;
   private dueDate = new Date();
 
   constructor(
@@ -32,7 +32,7 @@ export class AdditionalInformationComponent implements OnInit {
         this.taskService.getTask(this.taskId)
           .subscribe(task => {
             console.log('AdditionalInformationComponent task=', task);
-            this.taskDeatil = task[0];
+            this.taskDetail = task[0];
           });
       });
   }
