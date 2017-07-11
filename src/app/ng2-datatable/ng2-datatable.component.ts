@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Http} from "@angular/http";
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-ng2-datatable',
@@ -8,18 +8,18 @@ import {Http} from "@angular/http";
 })
 export class Ng2DatatableComponent implements OnInit {
   public data: any[];
-  public filterQuery = "";
+  public filterQuery = '';
   public rowsOnPage = 10;
-  public sortBy = "email";
-  public sortOrder = "asc";
+  public sortBy = 'email';
+  public sortOrder = 'asc';
   public activePage = 3;
 
   constructor(private http: Http) { }
 
   ngOnInit() {
-    this.http.get("assets/datatable.json")
-      .subscribe((data)=> {
-        setTimeout(()=> {
+    this.http.get('assets/datatable.json')
+      .subscribe((data) => {
+        setTimeout(() => {
           this.data = data.json();
         }, 800);
     });
@@ -34,8 +34,8 @@ export class Ng2DatatableComponent implements OnInit {
   }
 
   public remove(item) {
-    let index = this.data.indexOf(item);
-    if(index>-1) {
+    const index = this.data.indexOf(item);
+    if (index > -1) {
       this.data.splice(index, 1);
     }
   }

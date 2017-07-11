@@ -13,7 +13,7 @@ export class TechnicalAssessmentComponent implements OnInit {
   public taskDetail: Object = {};
 
   constructor(
-        private router: Router,
+    private router: Router,
     private route: ActivatedRoute,
     private taskService: TaskService) { }
 

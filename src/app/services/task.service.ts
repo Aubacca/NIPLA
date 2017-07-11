@@ -23,16 +23,16 @@ export class TaskService {
     headers.append('Access-Control-Allow-Origin', '*');
     headers.append('Content-Type', 'application/json');
 */
-    let head: RequestOptionsArgs;
+//    const head: RequestOptionsArgs;
 
 
-    let headerArgs = new Headers({ 'Content-Type': 'application/json' });
+    const headerArgs = new Headers({ 'Content-Type': 'application/json' });
     headerArgs.append('Accept', 'application/json');
 //    headerArgs.append('Origin', 'http://localhost:4200');
 //    headerArgs.append('Access-Control-Request-Method', 'GET');
     headerArgs.append('Access-Control-Allow-Origin', '*');
 
-    let options = new RequestOptions({
+    const options = new RequestOptions({
       headers: headerArgs
 //      ,search: new URLSearchParams('validateUsr=false') // <-----
     });

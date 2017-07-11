@@ -8,7 +8,7 @@ import { PaginationModule } from 'ng2-bootstrap/pagination';
 import { AccordionModule } from 'ng2-bootstrap/accordion';
 import { Ng2TableModule } from 'ng2-table/ng2-table';
 import { TabsModule } from 'ng2-bootstrap/tabs';
-import { DataTableModule } from "angular2-datatable";
+import { DataTableModule } from 'angular2-datatable';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

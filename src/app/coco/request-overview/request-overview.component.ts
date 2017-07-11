@@ -8,9 +8,10 @@ import { RequestService } from '../../services/request.service';
   styleUrls: ['./request-overview.component.css']
 })
 export class RequestOverviewComponent implements OnInit {
-  private requestList:Array<any> = [];
-  public columns:Array<any> = [
-    {title: 'Request', name: 'REQUEST', sort: 'asc',  filtering: {filterString: '', placeholder: 'Filter by Request'}, className: ['office-header', 'text-success']},
+  private requestList: Array<any> = [];
+  public columns: Array<any> = [
+    {title: 'Request', name: 'REQUEST', sort: 'asc',  filtering: {filterString: '', placeholder: 'Filter by Request'},
+      className: ['office-header', 'text-success']},
     {title: 'Name', name: 'NAME', filtering: {filterString: '', placeholder: 'Filter by Name'}},
     {title: 'Type', name: 'REQUEST_TYPE', filtering: {filterString: '', placeholder: 'Filter by Type'}},
     {title: 'FG', name: 'FG', filtering: {filterString: '', placeholder: 'Filter by FG'}},
@@ -18,10 +19,10 @@ export class RequestOverviewComponent implements OnInit {
     {title: 'Priority', name: 'PRIORITY', filtering: {filterString: '', placeholder: 'Filter by Priority'}},
     {title: 'Status', name: 'STATUS', filtering: {filterString: '', placeholder: 'Filter by Status'}},
   ];
-  public page:number = 1;
-  public itemsPerPage:number = 10;
-  public length:number = 0;
-  public config:any = {
+  public page = 1;
+  public itemsPerPage = 10;
+  public length = 0;
+  public config: any = {
     paging: false,
     sorting: {columns: this.columns},
     filtering: {filterString: '', columnName: 'position'},
@@ -42,7 +43,7 @@ export class RequestOverviewComponent implements OnInit {
       });
   }
 
-  public onChangeTable(config:any, page:any = {page: this.page, itemsPerPage: this.itemsPerPage}):any {
+  public onChangeTable(config: any, page: any = {page: this.page, itemsPerPage: this.itemsPerPage}): any {
     if (config.filtering) {
       Object.assign(this.config.filtering, config.filtering);
     }

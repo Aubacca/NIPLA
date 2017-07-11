@@ -12,21 +12,22 @@ import { TaskService } from '../../services/task.service';
 })
 export class TaskListComponent implements OnInit {
   taskList: any[] = [];
-  public rows:Array<any> = [];
-  public columns:Array<any> = [
+  public rows: Array<any> = [];
+  public columns: Array<any> = [
 //    {title: 'ID ', name: 'ID', sort: false},
     {title: 'Type', name: 'TYPE', filtering: {filterString: '', placeholder: 'Filter by Type'}},
     {title: 'Name', name: 'NAME', filtering: {filterString: '', placeholder: 'Filter by Name'}},
     {title: 'FG', name: 'FG', filtering: {filterString: '', placeholder: 'Filter by FG'}},
     {title: 'Task Owner', name: 'TASK_OWNER', filtering: {filterString: '', placeholder: 'Filter by Ower'}},
-    {title: 'Request', name: 'REQUEST', filtering: {filterString: '', placeholder: 'Filter by Request'}, className: ['office-header', 'text-success'], sort: 'asc'},
+    {title: 'Request', name: 'REQUEST', filtering: {filterString: '', placeholder: 'Filter by Request'},
+      className: ['office-header', 'text-success'], sort: 'asc'},
     {title: 'Priority', name: 'PRIORITY', filtering: {filterString: '', placeholder: 'Filter by Priority'}},
   ];
-  public page:number = 1;
-  public itemsPerPage:number = 10;
-  public length:number = 0;
+  public page = 1;
+  public itemsPerPage = 10;
+  public length = 0;
 
-  public config:any = {
+  public config: any = {
     paging: false,
     sorting: {columns: this.columns},
     filtering: {filterString: '', columnName: 'position'},
@@ -46,13 +47,13 @@ export class TaskListComponent implements OnInit {
       });
   }
 
-  public changePage(page:any, data:Array<any> = this.taskList):Array<any> {
-    let start = (page.page - 1) * page.itemsPerPage;
-    let end = page.itemsPerPage > -1 ? (start + page.itemsPerPage) : data.length;
+  public changePage(page: any, data: Array<any> = this.taskList): Array<any> {
+    const start = (page.page - 1) * page.itemsPerPage;
+    const end = page.itemsPerPage > -1 ? (start + page.itemsPerPage) : data.length;
     return data.slice(start, end);
   }
 
-  public onChangeTable(config:any, page:any = {page: this.page, itemsPerPage: this.itemsPerPage}):any {
+  public onChangeTable(config: any, page: any = {page: this.page, itemsPerPage: this.itemsPerPage}): any {
     if (config.filtering) {
       Object.assign(this.config.filtering, config.filtering);
     }
@@ -79,11 +80,11 @@ export class TaskListComponent implements OnInit {
       case 'Add. Info.':
         this.router.navigate(['/tasks/additionalInformation', task.ID]);
         break;
-    
+
       case 'Tech. Assessment':
         this.router.navigate(['/tasks/technicalAssessment', task.ID]);
         break;
-    
+
       default:
         break;
     }
