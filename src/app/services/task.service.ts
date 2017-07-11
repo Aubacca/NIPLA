@@ -49,11 +49,13 @@ export class TaskService {
       .map(res => res.json().tasks);
   }
 
-  public getTaskById(taskId){
+/*
+  private getTaskById(taskId){
     console.log('s taskId=', taskId);
     return this.http.get(this.url_tasks)
       .map(res => res.json().tasks);
   }
+*/
 
   public getTask(taskId: string) {
     return this.http.get(this.url_tasks)

@@ -18,16 +18,23 @@ import { RequestDetailComponent } from './coco/request-detail/request-detail.com
 
 const routes: Routes = [
   {path: '', children: [], component: HomeComponent},
-  {path: 'coco', component: CocoComponent},
-  {path: 'coco/requestDetails/:requestId', component: RequestDetailComponent},
+  {path: 'coco',
+  children: [
+    {path: '', component: CocoComponent},
+    {path: 'requestDetails/:requestId', component: RequestDetailComponent},
+  ]},
   {path: 'corq-task/:id', component: CorqComponent},
   {path: 'corq/:request', component: CorqComponent},
   {path: 'tali', component: TaliComponent},
   {path: 'imco', component: ImcoComponent},
   {path: 'tableDemo', component: Ng2TableDemoComponent},
   {path: 'dataTable', component: Ng2DatatableComponent},
-  {path: 'tasks/additionalInformation/:taskId', component: AdditionalInformationComponent},
-  {path: 'tasks/technicalAssessment/:taskId', component: TechnicalAssessmentComponent},
+  {path: 'tasks', 
+  children: [
+    {path: 'additionalInformation/:taskId', component: AdditionalInformationComponent},
+    {path: 'technicalAssessment/:taskId', component: TechnicalAssessmentComponent},
+  ]},
+
 ];
 
 @NgModule({
