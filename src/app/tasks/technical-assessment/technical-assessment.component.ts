@@ -11,6 +11,7 @@ import { TaskService } from './../../services/task.service';
 })
 export class TechnicalAssessmentComponent implements OnInit {
   public taskDetail: Object = {};
+  public radioModel = 'NO';
 
   constructor(
     private router: Router,

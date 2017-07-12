@@ -12,7 +12,9 @@ import { TaskService } from '../../services/task.service';
 })
 export class TaskListComponent implements OnInit {
   taskList: any[] = [];
+/*
   public rows: Array<any> = [];
+*/
   public columns: Array<any> = [
 //    {title: 'ID ', name: 'ID', sort: false},
     {title: 'Type', name: 'TYPE', filtering: {filterString: '', placeholder: 'Filter by Type'}},
@@ -42,7 +44,9 @@ export class TaskListComponent implements OnInit {
     this.taskService.getTasks()
       .subscribe(tasks => {
         this.taskList = tasks;
+/*
         this.rows = tasks;
+*/
         this.onChangeTable(this.config);
       });
   }
@@ -75,7 +79,7 @@ export class TaskListComponent implements OnInit {
     }
   }
 
-  public onTaskSelected(e, task) {
+  public onTaskTypeSelected(e, task) {
     switch (task.TYPE) {
       case 'Add. Info.':
         this.router.navigate(['/tasks/additionalInformation', task.ID]);

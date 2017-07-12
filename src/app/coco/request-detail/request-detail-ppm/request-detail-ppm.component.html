@@ -1,0 +1,86 @@
+<accordion-group #group>
+  <div accordion-heading class="ppm-accordion-heading">
+    <div class="row">
+      <div class="col-xs-1">
+        <input type="checkbox">
+        Type <b>{{printedPackaMatDetail.TYPE}}</b>
+        </div>
+      <div class="col-xs-1">ID <b>{{printedPackaMatDetail.ID}}</b></div>
+      <div class="col-xs-3">Product Family <b>{{printedPackaMatDetail.PROD_FAM}}</b></div>
+      <div class="col-xs-2">Impacted <b>{{printedPackaMatDetail.IMPACTED}}</b></div>
+      <div class="col-xs-2">Status <b>{{printedPackaMatDetail.PPM_STATUS}}</b></div>
+      <div class="col-xs-3"><span class="pull-right">Actions <b>{{printedPackaMatDetail.ACTIONS}}</b></span></div>
+    </div>
+  </div>
+  <div class="fg-details">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">Status <b>{{printedPackaMatDetail.PPM_STATUS}}</b></div>
+      <div class="col-xs-12 col-md-4">PPM <b>{{printedPackaMatDetail.ID}}</b></div>
+      <div class="col-xs-12 col-md-4">Local PI Nunmbers <b>{{printedPackaMatDetail.PI_NO}}</b></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">Content Change
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions2" id="inlineRadio21" value="option21" checked> Yes
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions2" id="inlineRadio22" value="option22"> No
+        </label>
+      </div>
+      <div class="col-xs-12 col-md-4">Product <b>{{printedPackaMatDetail.PROD_FAM}}</b></div>
+      <div class="col-xs-12 col-md-4">GTIN <b>N/A</b></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">Change to Dimensions
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions3" id="inlineRadio31" value="option31"> Yes
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions3" id="inlineRadio32" value="option32" checked> No
+        </label>
+      </div>
+      <div class="col-xs-12 col-md-4">Material <b>{{printedPackaMatDetail.MATERIAL}}</b></div>
+      <div class="col-xs-12 col-md-4">PaCo ID <b>N/A</b></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">Change to Layout
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions1" id="inlineRadio11" value="option11"> Yes
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions1" id="inlineRadio12" value="option12" checked> No
+        </label>
+      </div>
+      <div class="col-xs-12 col-md-4">Material Group <b>N/A</b></div>
+      <div class="col-xs-12 col-md-4">MakeUp Code <b>{{printedPackaMatDetail.MAKEUP}}</b></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">Artworks Information <b>N/A</b></div>
+      <div class="col-xs-12 col-md-4">Included by FGs <b>N/A</b></div>
+      <div class="col-xs-12 col-md-4">Packaging Site <b>{{printedPackaMatDetail.PACK_SITE}}</b></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">Change to Master Data
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions4" id="inlineRadio41" value="option41"> Yes
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions4" id="inlineRadio42" value="option42" checked> No
+        </label>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container-fluid">
+    PDF History
+    <div>
+      ...
+    </div>
+  </div>
+</accordion-group>
+
+<!--
+<div class="well well-primary">
+  finishGood: {{ printedPackaMatDetail | json }}
+</div>
+-->

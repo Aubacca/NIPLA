@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AlertModule } from 'ng2-bootstrap';
 import { PaginationModule } from 'ng2-bootstrap/pagination';
 import { AccordionModule } from 'ng2-bootstrap/accordion';
+import { ButtonsModule } from 'ng2-bootstrap/buttons';
 import { Ng2TableModule } from 'ng2-table/ng2-table';
 import { TabsModule } from 'ng2-bootstrap/tabs';
 import { DataTableModule } from 'angular2-datatable';
@@ -30,6 +31,8 @@ import { RequestOverviewComponent } from './coco/request-overview/request-overvi
 import { BundlingOverviewComponent } from './coco/bundling-overview/bundling-overview.component';
 import { RequestDetailComponent } from './coco/request-detail/request-detail.component';
 import { TechnicalAssessmentComponent } from './tasks/technical-assessment/technical-assessment.component';
+import { RequestDetailFgComponent } from './coco/request-detail/request-detail-fg/request-detail-fg.component';
+import { RequestDetailPpmComponent } from './coco/request-detail/request-detail-ppm/request-detail-ppm.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,9 @@ import { TechnicalAssessmentComponent } from './tasks/technical-assessment/techn
     RequestOverviewComponent,
     BundlingOverviewComponent,
     RequestDetailComponent,
-    TechnicalAssessmentComponent
+    TechnicalAssessmentComponent,
+    RequestDetailFgComponent,
+    RequestDetailPpmComponent
   ],
   imports: [
     BrowserModule,
@@ -56,8 +61,9 @@ import { TechnicalAssessmentComponent } from './tasks/technical-assessment/techn
     HttpModule,
     AppRoutingModule,
     AlertModule.forRoot(),
-    PaginationModule.forRoot(),
     AccordionModule.forRoot(),
+    ButtonsModule.forRoot(),
+    PaginationModule.forRoot(),
     TabsModule.forRoot(),
     Ng2TableModule,
     DataTableModule

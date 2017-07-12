@@ -1,0 +1,48 @@
+<accordion-group #group>
+  <div accordion-heading class="alpin-accordion-heading">
+    <div class="row">
+      <div class="col-xs-1">
+        <input type="checkbox">
+        Type <b>{{finishGoodDetail.TYPE}}</b>
+        </div>
+      <div class="col-xs-1">ID <b>{{finishGoodDetail.ID}}</b></div>
+      <div class="col-xs-2">Product Family <b>{{finishGoodDetail.PROD_FAM}}</b></div>
+      <div class="col-xs-2">PaCo ID <b>{{finishGoodDetail.PACO_ID}}</b></div>
+      <div class="col-xs-2">Norm Pack <b>{{finishGoodDetail.NORM_PACK}}</b></div>
+      <div class="col-xs-2">MakeUp <b>{{finishGoodDetail.MAKEUP}}</b></div>
+      <div class="col-xs-2">Plant Spec. Mat. Status <b>{{finishGoodDetail.PLANT_STATUS}}</b></div>
+    </div>
+  </div>
+  <div class="fg-details">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">FG <b>{{finishGoodDetail.ID}}</b></div>
+      <div class="col-xs-12 col-md-3">DS Source <b>N/A</b></div>
+      <div class="col-xs-12 col-md-3"><b>N/A</b></div>
+      <div class="col-xs-12 col-md-3">Predecessor <b>N/A</b></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-3">ACN <b>N/A</b></div>
+      <div class="col-xs-12 col-md-3">DP Source <b>N/A</b></div>
+      <div class="col-xs-12 col-md-3">New Shelf Life <b>{{finishGoodDetail.SHELF_LIVE}}</b></div>
+      <div class="col-xs-12 col-md-3">Old Price <b>N/A</b></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-3">FG Description <b>{{finishGoodDetail.NAME}}</b></div>
+      <div class="col-xs-12 col-md-3">Packaging Source <b>{{finishGoodDetail.PACO_ID}}</b></div>
+      <div class="col-xs-12 col-md-6">New Shelf Life <b>{{finishGoodDetail.SHELF_LIVE}}</b></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-3">Country <b>N/A</b></div>
+      <div class="col-xs-12 col-md-3">Site QP Release <b>N/A</b></div>
+      <div class="col-xs-12 col-md-6">2D ID/Material Codification <b>N/A</b></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-3">Target BoA Approval Date <b>N/A</b></div>
+    </div>
+  </div>
+</accordion-group>
+<!--
+<div class="well well-primary">
+  finishGood: {{ finishGoodDetail | json }}
+</div>
+-->

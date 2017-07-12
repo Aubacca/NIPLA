@@ -37,145 +37,32 @@
       <div class="tc-buttons">
         <div class="row">
           <div class="col-xs-12 col-md-4 pull-left">
-            <button type="button" class="btn btn-info">Current & Target Configuration</button>
-            <button type="button" class="btn btn-default">Only Target Configuration</button>
+            <button type="button" class="btn btn-info"  disabled="disabled">Current & Target Configuration</button>
+            <button type="button" class="btn btn-default" disabled="disabled">Only Target Configuration</button>
           </div>
           <div class="col-xs-12 col-md-4">
-            <button type="button" class="btn btn-info">PPMs per FG</button>
-            <button type="button" class="btn btn-default">FGs per PPM</button>
-            <button type="button" class="btn btn-default">Only FGs</button>
-            <button type="button" class="btn btn-default">Onyl PPMs</button>
+            <button type="button" class="btn btn-default" disabled="disabled">PPMs per FG</button>
+            <button type="button" class="btn btn-default" disabled="disabled">FGs per PPM</button>
+            <button type="button" class="btn btn-default"
+               [ngClass]="{'btn-primary' : fgOnly}"
+              (click)="fgOnly = !fgOnly; ppmOnly = false;">Only FGs</button>
+            <button type="button" class="btn btn-default"
+               [ngClass]="{'btn-primary' : ppmOnly}"
+              (click)="ppmOnly = !ppmOnly; fgOnly = false;">Only PPMs</button>
           </div>
           <div class="col-xs-12 col-md-4">
-            <button type="button" class="btn btn-default  pull-right">Add FG</button>
+            <span class="pull-right">
+              <button type="button" class="btn btn-warning" disabled="disabled">Add FG</button>
+            </span>
           </div>
         </div>
       </div>
       <div class="tc-data">
         <accordion>
-          <accordion-group #group>
-            <div accordion-heading class="alpin-accordion-heading">
-              <div class="row">
-                <div class="col-xs-1"><input type="checkbox"></div>
-                <div class="col-xs-1">Type <b>FG</b></div>
-                <div class="col-xs-1">ID <b>N/A</b></div>
-                <div class="col-xs-3">Product Family <b>N/A</b></div>
-                <div class="col-xs-1">PaCo ID <b>N/A</b></div>
-                <div class="col-xs-1">Norm Pack <b>N/A</b></div>
-                <div class="col-xs-2">MakeUp <b>N/A</b></div>
-                <div class="col-xs-2">Plant Spec. Mat. Status <b>N/A</b></div>
-              </div>
-            </div>
-            <div class="fg-details">
-              <div class="row">
-                <div class="col-xs-12 col-md-3">FG <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">DS Source <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3"><b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Predecessor <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">ACN <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">DP Source <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">New Shelf Life <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Old Price <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">FG Description <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Packaging Source <b>N/A</b></div>
-                <div class="col-xs-12 col-md-6">New Shelf Life <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">Country <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Site QP Release <b>N/A</b></div>
-                <div class="col-xs-12 col-md-6">2D ID/Material Codification <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">Target BoA Approval Date <b>N/A</b></div>
-              </div>
-            </div>
-          </accordion-group>
-          <accordion-group #group>
-            <div accordion-heading class="alpin-accordion-heading">
-              <div class="row">
-                <div class="col-xs-1"><input type="checkbox"></div>
-                <div class="col-xs-1">Type <b>FG</b></div>
-                <div class="col-xs-1">ID <b>N/A</b></div>
-                <div class="col-xs-3">Product Family <b>N/A</b></div>
-                <div class="col-xs-1">PaCo ID <b>N/A</b></div>
-                <div class="col-xs-1">Norm Pack <b>N/A</b></div>
-                <div class="col-xs-2">MakeUp <b>N/A</b></div>
-                <div class="col-xs-2">Plant Spec. Mat. Status <b>N/A</b></div>
-              </div>
-            </div>
-            <div class="fg-details">
-              <div class="row">
-                <div class="col-xs-12 col-md-3">FG <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">DS Source <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3"><b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Predecessor <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">ACN <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">DP Source <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">New Shelf Life <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Old Price <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">FG Description <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Packaging Source <b>N/A</b></div>
-                <div class="col-xs-12 col-md-6">New Shelf Life <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">Country <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Site QP Release <b>N/A</b></div>
-                <div class="col-xs-12 col-md-6">2D ID/Material Codification <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">Target BoA Approval Date <b>N/A</b></div>
-              </div>
-            </div>
-          </accordion-group>
-          <accordion-group #group>
-            <div accordion-heading class="alpin-accordion-heading">
-              <div class="row">
-                <div class="col-xs-1"><input type="checkbox"></div>
-                <div class="col-xs-1">Type <b>FG</b></div>
-                <div class="col-xs-1">ID <b>N/A</b></div>
-                <div class="col-xs-3">Product Family <b>N/A</b></div>
-                <div class="col-xs-1">PaCo ID <b>N/A</b></div>
-                <div class="col-xs-1">Norm Pack <b>N/A</b></div>
-                <div class="col-xs-2">MakeUp <b>N/A</b></div>
-                <div class="col-xs-2">Plant Spec. Mat. Status <b>N/A</b></div>
-              </div>
-            </div>
-            <div class="fg-details">
-              <div class="row">
-                <div class="col-xs-12 col-md-3">FG <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">DS Source <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3"><b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Predecessor <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">ACN <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">DP Source <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">New Shelf Life <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Old Price <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">FG Description <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Packaging Source <b>N/A</b></div>
-                <div class="col-xs-12 col-md-6">New Shelf Life <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">Country <b>N/A</b></div>
-                <div class="col-xs-12 col-md-3">Site QP Release <b>N/A</b></div>
-                <div class="col-xs-12 col-md-6">2D ID/Material Codification <b>N/A</b></div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12 col-md-3">Target BoA Approval Date <b>N/A</b></div>
-              </div>
-            </div>
-          </accordion-group>
+          <span *ngFor="let item of targetConfList">
+            <app-request-detail-fg *ngIf="item.TYPE === 'FG' && !ppmOnly" [finishGoodDetail]="item"></app-request-detail-fg>
+            <app-request-detail-ppm *ngIf="item.TYPE === 'PPM' && !fgOnly" [printedPackaMatDetail]="item"></app-request-detail-ppm>
+          </span>
         </accordion>
       </div>
 

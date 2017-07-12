@@ -22,13 +22,48 @@
     <hr>
     <b>Request Details</b>
     <hr>
-    <b>Target Configuration</b>
+    <div class="container-fluid">
+      <b>Target Configuration</b>
+      <div class="row">
+        <div class="col-xs-4">
+          <button class="btn btn-sm btn-info">PPMs per FG</button>
+          <button class="btn btn-sm btn-default">FGs per PPM</button>
+        </div>
+        <div class="col-xs-4">
+          <span class="center-block">
+            <button class="btn btn-sm btn-default">FGs Only</button>
+            <button class="btn btn-sm btn-default">PPMs Only</button>
+          </span>
+        </div>
+        <div class="col-xs-4">
+          <span class="pull-right">
+            <button class="btn btn-sm btn-default">Expand</button>
+            <button class="btn btn-sm btn-default">Collapse</button>
+          </span>
+        </div>
+      </div>
+    </div>
     <hr>
-    <b>Notes</b>
-    <div class="form-group">
-      <textarea class="form-control" rows="3" id="notes" name="notes">
+    <div class="container-fluid">
+      <b>Notes</b>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-xs-12">
+            <textarea class="form-control" rows="3" id="notes" name="notes">
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis assumenda magnam quo magni! Iure error accusantium, quas dolor dolorum incidunt voluptatem, rem quos veritatis eum praesentium impedit tempore numquam aperiam?
-      </textarea>
+            </textarea>
+          </div>
+        </div>
+        <div class="row technical-drawing">
+          <div class="col-xs-12">
+            Is Technical Drawing Required?
+              <div class="btn-group">
+                <label class="btn btn-default" [(ngModel)]="radioModel" name="doTechnicalDrawing" btnRadio="YES">Yes</label>
+                <label class="btn btn-default" [(ngModel)]="radioModel" name="doNoTechnicalDrawing" btnRadio="NO">No</label>
+              </div>
+          </div>
+        </div>
+      </div>
     </div> 
   </div>
   <div class="panel-footer">

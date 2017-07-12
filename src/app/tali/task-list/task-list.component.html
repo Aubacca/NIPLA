@@ -43,9 +43,9 @@
     <tr *ngFor="let task of mf.data">
 <!--
         <td><a [routerLink]="['/tasks/additionalInformation', task.ID]" [queryParams]="{debug: true}">{{task.TYPE}}</a></td>
-        <td><a (click)="onTaskSelected($event, task)">{{task.TYPE}}</a></td>
+        <td><a (click)="onTaskTypeSelected($event, task)">{{task.TYPE}}</a></td>
 -->
-        <td><button type="button" class="btn btn-link" (click)="onTaskSelected($event, task)">{{task.TYPE}}</button></td>
+        <td><button type="button" class="btn btn-link" (click)="onTaskTypeSelected($event, task)">{{task.TYPE}}</button></td>
         <td class="text-left">{{task.TASK_OWNER}}</td>
         <td><a [routerLink]="['/coco/requestDetails', task.REQUEST]" [queryParams]="{debug: false}">{{task.REQUEST}}</a></td>
         <td>{{task.NAME}}</td>
