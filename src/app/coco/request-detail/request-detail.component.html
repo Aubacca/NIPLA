@@ -41,14 +41,18 @@
             <button type="button" class="btn btn-default" disabled="disabled">Only Target Configuration</button>
           </div>
           <div class="col-xs-12 col-md-4">
-            <button type="button" class="btn btn-default" disabled="disabled">PPMs per FG</button>
-            <button type="button" class="btn btn-default" disabled="disabled">FGs per PPM</button>
             <button type="button" class="btn btn-default"
-               [ngClass]="{'btn-primary' : fgOnly}"
-              (click)="fgOnly = !fgOnly; ppmOnly = false;">Only FGs</button>
+              (click)="ppmPerFg = true; fgPerPpm = false; fgOnly = false; ppmOnly = false"
+              [ngClass]="{'btn-info' : ppmPerFg}">PPMs per FG</button>
             <button type="button" class="btn btn-default"
-               [ngClass]="{'btn-primary' : ppmOnly}"
-              (click)="ppmOnly = !ppmOnly; fgOnly = false;">Only PPMs</button>
+              (click)="ppmPerFg = false; fgPerPpm = true; fgOnly = false; ppmOnly = false"
+              [ngClass]="{'btn-info' : fgPerPpm}">FGs per PPM</button>
+            <button type="button" class="btn btn-default"
+              (click)="ppmPerFg = false; fgPerPpm = false; fgOnly = true; ppmOnly = false"
+              [ngClass]="{'btn-info' : fgOnly}">Only FGs</button>
+            <button type="button" class="btn btn-default"
+              (click)="ppmPerFg = false; fgPerPpm = false; fgOnly = false; ppmOnly = true"
+              [ngClass]="{'btn-info' : ppmOnly}">Only PPMs</button>
           </div>
           <div class="col-xs-12 col-md-4">
             <span class="pull-right">
@@ -102,3 +106,8 @@
     </div>
   </div>
 </div>
+<!--
+<div class="well well-primary">
+  requestDetail: {{ requestDetails | json }}
+</div>
+-->

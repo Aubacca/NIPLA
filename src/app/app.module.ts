@@ -33,6 +33,8 @@ import { RequestDetailComponent } from './coco/request-detail/request-detail.com
 import { TechnicalAssessmentComponent } from './tasks/technical-assessment/technical-assessment.component';
 import { RequestDetailFgComponent } from './coco/request-detail/request-detail-fg/request-detail-fg.component';
 import { RequestDetailPpmComponent } from './coco/request-detail/request-detail-ppm/request-detail-ppm.component';
+import { RequestDetailViewComponent } from './tasks/request-detail-view/request-detail-view.component';
+import { TaskAssignedDocsComponent } from './tasks/task-assigned-docs/task-assigned-docs.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { RequestDetailPpmComponent } from './coco/request-detail/request-detail-
     RequestDetailComponent,
     TechnicalAssessmentComponent,
     RequestDetailFgComponent,
-    RequestDetailPpmComponent
+    RequestDetailPpmComponent,
+    RequestDetailViewComponent,
+    TaskAssignedDocsComponent
   ],
   imports: [
     BrowserModule,

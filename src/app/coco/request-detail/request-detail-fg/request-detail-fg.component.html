@@ -1,4 +1,4 @@
-<accordion-group #group>
+<accordion-group #group [isOpen]="expandAll">
   <div accordion-heading class="alpin-accordion-heading">
     <div class="row">
       <div class="col-xs-1">
@@ -10,7 +10,7 @@
       <div class="col-xs-2">PaCo ID <b>{{finishGoodDetail.PACO_ID}}</b></div>
       <div class="col-xs-2">Norm Pack <b>{{finishGoodDetail.NORM_PACK}}</b></div>
       <div class="col-xs-2">MakeUp <b>{{finishGoodDetail.MAKEUP}}</b></div>
-      <div class="col-xs-2">Plant Spec. Mat. Status <b>{{finishGoodDetail.PLANT_STATUS}}</b></div>
+      <div class="col-xs-2"><span class="pull-right">Plant Spec. Mat. Status <b>{{finishGoodDetail.PLANT_STATUS}}</b></span></div>
     </div>
   </div>
   <div class="fg-details">

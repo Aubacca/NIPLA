@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RequestDetailFgComponent implements OnInit {
   @Input() public finishGoodDetail = {};
+  @Input() public expandAll = false;
 
   constructor() { }
 

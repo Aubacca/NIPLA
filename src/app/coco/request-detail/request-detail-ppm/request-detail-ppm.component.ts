@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RequestDetailPpmComponent implements OnInit {
   @Input() public printedPackaMatDetail = {};
+  @Input() public expandAll = false;
 
   constructor() { }
 

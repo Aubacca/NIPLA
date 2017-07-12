@@ -20,27 +20,41 @@
       </div>
     </div>
     <hr>
-    <b>Request Details</b>
+    <app-request-detail-view [requestDetail]="taskDetail"></app-request-detail-view>
+    <hr>
+    <app-task-assigned-docs></app-task-assigned-docs>
     <hr>
     <div class="container-fluid">
       <b>Target Configuration</b>
       <div class="row">
-        <div class="col-xs-4">
-          <button class="btn btn-sm btn-info">PPMs per FG</button>
-          <button class="btn btn-sm btn-default">FGs per PPM</button>
+        <div class="col-xs-6">
+          <button class="btn btn-sm btn-default"
+            (click)="ppmPerFg = true; fgPerPpm = false; fgOnly = false; ppmOnly = false"
+            [ngClass]="{'btn-info' : ppmPerFg}">PPMs per FG</button>
+          <button class="btn btn-sm btn-default"
+            (click)="ppmPerFg = false; fgPerPpm = true; fgOnly = false; ppmOnly = false"
+            [ngClass]="{'btn-info' : fgPerPpm}">FGs per PPM</button>
+          <button class="btn btn-sm btn-default"
+            (click)="ppmPerFg = false; fgPerPpm = false; fgOnly = true; ppmOnly = false"
+            [ngClass]="{'btn-info' : fgOnly}">FGs Only</button>
+          <button class="btn btn-sm btn-default"
+            (click)="ppmPerFg = false; fgPerPpm = false; fgOnly = false; ppmOnly = true"
+            [ngClass]="{'btn-info' : ppmOnly}">PPMs Only</button>
         </div>
-        <div class="col-xs-4">
-          <span class="center-block">
-            <button class="btn btn-sm btn-default">FGs Only</button>
-            <button class="btn btn-sm btn-default">PPMs Only</button>
-          </span>
-        </div>
-        <div class="col-xs-4">
+        <div class="col-xs-6">
           <span class="pull-right">
-            <button class="btn btn-sm btn-default">Expand</button>
-            <button class="btn btn-sm btn-default">Collapse</button>
+            <button class="btn btn-sm btn-default" (click)="expandAllTargetConfigs = true;">Expand</button>
+            <button class="btn btn-sm btn-default" (click)="expandAllTargetConfigs = false;">Collapse</button>
           </span>
         </div>
+      </div>
+      <div class="tc-data">
+        <accordion>
+          <span *ngFor="let item of targetConfList">
+            <app-request-detail-fg *ngIf="item.TYPE === 'FG' && !ppmOnly" [finishGoodDetail]="item" [expandAll]="expandAllTargetConfigs"></app-request-detail-fg>
+            <app-request-detail-ppm *ngIf="item.TYPE === 'PPM' && !fgOnly" [printedPackaMatDetail]="item" [expandAll]="expandAllTargetConfigs"></app-request-detail-ppm>
+          </span>
+        </accordion>
       </div>
     </div>
     <hr>
@@ -58,8 +72,8 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis assumenda 
           <div class="col-xs-12">
             Is Technical Drawing Required?
               <div class="btn-group">
-                <label class="btn btn-default" [(ngModel)]="radioModel" name="doTechnicalDrawing" btnRadio="YES">Yes</label>
-                <label class="btn btn-default" [(ngModel)]="radioModel" name="doNoTechnicalDrawing" btnRadio="NO">No</label>
+                <label class="btn btn-default" [(ngModel)]="techDrawingModel" name="doTechnicalDrawing" btnRadio="YES">Yes</label>
+                <label class="btn btn-default" [(ngModel)]="techDrawingModel" name="doNoTechnicalDrawing" btnRadio="NO">No</label>
               </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-<accordion-group #group>
+<accordion-group #group [isOpen]="expandAll">
   <div accordion-heading class="ppm-accordion-heading">
     <div class="row">
       <div class="col-xs-1">
@@ -6,10 +6,10 @@
         Type <b>{{printedPackaMatDetail.TYPE}}</b>
         </div>
       <div class="col-xs-1">ID <b>{{printedPackaMatDetail.ID}}</b></div>
-      <div class="col-xs-3">Product Family <b>{{printedPackaMatDetail.PROD_FAM}}</b></div>
+      <div class="col-xs-4">Product Family <b>{{printedPackaMatDetail.PROD_FAM}}</b></div>
       <div class="col-xs-2">Impacted <b>{{printedPackaMatDetail.IMPACTED}}</b></div>
       <div class="col-xs-2">Status <b>{{printedPackaMatDetail.PPM_STATUS}}</b></div>
-      <div class="col-xs-3"><span class="pull-right">Actions <b>{{printedPackaMatDetail.ACTIONS}}</b></span></div>
+      <div class="col-xs-2"><span class="pull-right">Actions <b>{{printedPackaMatDetail.ACTIONS}}</b></span></div>
     </div>
   </div>
   <div class="fg-details">
@@ -62,10 +62,10 @@
     <div class="row">
       <div class="col-xs-12 col-md-4">Change to Master Data
         <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions4" id="inlineRadio41" value="option41"> Yes
+          <input type="radio" name="inlineRadioOptions4" value="option41"> Yes
         </label>
         <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions4" id="inlineRadio42" value="option42" checked> No
+          <input type="radio" name="inlineRadioOptions4" value="option42" checked> No
         </label>
       </div>
     </div>
