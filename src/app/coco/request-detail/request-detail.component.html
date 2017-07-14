@@ -110,4 +110,18 @@
 <div class="well well-primary">
   requestDetail: {{ requestDetails | json }}
 </div>
+
+<div class="well bg-warning">
+  <span *ngIf="races2017; else elseBlock" >
+    races2017: {{ races2017 | json }}
+  </span>
+  <ng-template #elseBlock>Loading .. </ng-template>
+</div>
+
+<div class="well bg-success">
+  <span *ngIf="races2016; else elseBlock" >
+    races2016: {{ races2016 | json }}
+  </span>
+  <ng-template #elseBlock>Loading .. </ng-template>
+</div>
 -->

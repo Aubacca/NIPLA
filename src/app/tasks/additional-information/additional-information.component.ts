@@ -13,7 +13,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AdditionalInformationComponent implements OnInit {
   private taskId: string;
-  private taskDetail: any = null;
+  public taskDetail: any = null;
   private dueDate = new Date();
 
   constructor(

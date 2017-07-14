@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { RequestService } from '../../services/request.service';
@@ -8,7 +8,7 @@ import { RequestService } from '../../services/request.service';
   templateUrl: './request-detail.component.html',
   styleUrls: ['./request-detail.component.css']
 })
-export class RequestDetailComponent implements OnInit {
+export class RequestDetailComponent implements OnInit, OnDestroy {
   public requestDetails: any = undefined;
   public targetConfList = [];
 
@@ -17,18 +17,32 @@ export class RequestDetailComponent implements OnInit {
   public fgOnly = false;
   public ppmOnly = false;
 
+  public races2016: Array<any>;
+  public races2017: Array<any>;
+  private race2016Subscription;
+  private race2017Subscription;
+
   constructor(
     private route: ActivatedRoute,
     private requestService: RequestService) { }
 
   ngOnInit() {
     this.route.params.subscribe(
-      params => {
-        console.log('CorqComponent params=', params);
-        this.loadRequestDetails(params.requestId);
-      });
+      params => this.loadRequestDetails(params.requestId));
     //
+    // Load mock data.
     this.targetConfList = this.getTargetConfigurationData();
+    //
+    // Load F1 races.
+    this.race2017Subscription = this.requestService.getRaces(2017, 4000).subscribe(races => this.races2017 = races);
+    this.race2016Subscription = this.requestService.getRaces(2016).subscribe(races => this.races2016 = races);
+    console.log('this.race2017Subscription=', this.race2017Subscription);
+  }
+
+  ngOnDestroy() {
+    this.race2016Subscription.unsubscribe();
+    this.race2017Subscription.unsubscribe();
+    console.log('this.race2017Subscription=', this.race2017Subscription);
   }
 
   private loadRequestDetails(requestId) {
