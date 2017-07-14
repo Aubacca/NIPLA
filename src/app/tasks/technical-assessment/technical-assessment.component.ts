@@ -41,7 +41,7 @@ export class TechnicalAssessmentComponent implements OnInit {
       .subscribe(task => {
         this.taskDetail = task[0];
         this.requestService.getRequest(this.taskDetail.REQUEST)
-          .subscribe(request => this.requestDetail = request[0])
+          .subscribe(request => this.requestDetail = request[0]);
       });
   }
 
