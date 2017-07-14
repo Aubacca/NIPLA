@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { RequestService } from '../../services/request.service';
+import { Request } from '../../modules/request';
 
 @Component({
   selector: 'app-request-detail',
@@ -9,7 +10,7 @@ import { RequestService } from '../../services/request.service';
   styleUrls: ['./request-detail.component.css']
 })
 export class RequestDetailComponent implements OnInit, OnDestroy {
-  public requestDetails: any = undefined;
+  public requestDetails: Request;
   public targetConfList = [];
 
   public ppmPerFg = true;
@@ -46,14 +47,9 @@ export class RequestDetailComponent implements OnInit, OnDestroy {
   }
 
   private loadRequestDetails(requestId) {
-    console.log('c loadRequestDetails requestId=', requestId);
     if (requestId) {
       this.requestService.getRequest(requestId)
-        .subscribe(
-          request => {
-            console.log('request=', request);
-            this.requestDetails = request[0];
-          });
+        .subscribe(request => this.requestDetails = request[0]);
       }
   }
 

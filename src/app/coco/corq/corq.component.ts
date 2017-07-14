@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { RequestService } from '../../services/request.service';
+import { Request } from '../../modules/request';
 
 @Component({
   selector: 'app-corq',
@@ -9,7 +10,7 @@ import { RequestService } from '../../services/request.service';
   styleUrls: ['./corq.component.css']
 })
 export class CorqComponent implements OnInit {
-  public requestDetails: any = undefined;
+  public requestDetails: Request;
 
   constructor(
     private route: ActivatedRoute,
@@ -17,22 +18,13 @@ export class CorqComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(
-      params => {
-        console.log('CorqComponent params=', params);
-        this.loadRequestDetails(params.request);
-      }
-      );
+      params => this.loadRequestDetails(params.request));
   }
 
   private loadRequestDetails(requestId) {
-    console.log('c loadRequestDetails requestId=', requestId);
     if (requestId) {
       this.requestService.getRequest(requestId)
-        .subscribe(
-          request => {
-            console.log('request=', request);
-            this.requestDetails = request[0];
-          });
+        .subscribe(request => this.requestDetails = request[0]);
       }
   }
 }

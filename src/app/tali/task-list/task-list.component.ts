@@ -4,6 +4,7 @@ import { NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, Ng
 
 
 import { TaskService } from '../../services/task.service';
+import { Task } from '../../modules/task';
 
 @Component({
   selector: 'app-task-list',
@@ -11,12 +12,12 @@ import { TaskService } from '../../services/task.service';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  taskList: any[] = [];
-/*
-  public rows: Array<any> = [];
-*/
+  // Task types.
+  ADD_INFO = 'Add. Info.';
+  TECHNICAL_ASSESSMENT = 'Tech. Assessment';
+  //
+  taskList: Task[] = [];
   public columns: Array<any> = [
-//    {title: 'ID ', name: 'ID', sort: false},
     {title: 'Type', name: 'TYPE', filtering: {filterString: '', placeholder: 'Filter by Type'}},
     {title: 'Name', name: 'NAME', filtering: {filterString: '', placeholder: 'Filter by Name'}},
     {title: 'FG', name: 'FG', filtering: {filterString: '', placeholder: 'Filter by FG'}},
@@ -44,9 +45,6 @@ export class TaskListComponent implements OnInit {
     this.taskService.getTasks()
       .subscribe(tasks => {
         this.taskList = tasks;
-/*
-        this.rows = tasks;
-*/
         this.onChangeTable(this.config);
       });
   }
@@ -81,11 +79,11 @@ export class TaskListComponent implements OnInit {
 
   public onTaskTypeSelected(e, task) {
     switch (task.TYPE) {
-      case 'Add. Info.':
+      case this.ADD_INFO:
         this.router.navigate(['/tasks/additionalInformation', task.ID]);
         break;
 
-      case 'Tech. Assessment':
+      case this.TECHNICAL_ASSESSMENT:
         this.router.navigate(['/tasks/technicalAssessment', task.ID]);
         break;
 

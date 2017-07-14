@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <b>Request Details</b>
   <div class="row">
-    <div class="col-xs-12 col-md-2">Request <b><a [routerLink]="['/coco', 'requestDetails', requestDetail.REQUEST]">{{requestDetail.REQUEST}}</a></b></div>
+    <div class="col-xs-12 col-md-2">Request <b><a *ngIf="requestDetail" [routerLink]="['/coco', 'requestDetails', requestDetail.REQUEST]">{{requestDetail.REQUEST}}</a></b></div>
     <div class="col-xs-12 col-md-10">Reason for Request <b>N/A</b></div>
   </div>
   <div class="row">

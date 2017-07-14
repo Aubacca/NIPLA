@@ -8,7 +8,7 @@ import { RequestService } from '../../services/request.service';
   styleUrls: ['./request-overview.component.css']
 })
 export class RequestOverviewComponent implements OnInit {
-  public requestList: Array<any> = [];
+  public requestList: Array<Request> = [];
   public columns: Array<any> = [
     {title: 'Request', name: 'REQUEST', sort: 'asc',  filtering: {filterString: '', placeholder: 'Filter by Request'},
       className: ['office-header', 'text-success']},

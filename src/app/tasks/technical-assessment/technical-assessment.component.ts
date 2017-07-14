@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { RequestService } from './../../services/request.service';
 import { TaskService } from './../../services/task.service';
+import { Request } from './../../modules/request';
+import { Task } from './../../modules/task';
 
 
 @Component({
@@ -10,7 +13,8 @@ import { TaskService } from './../../services/task.service';
   styleUrls: ['./technical-assessment.component.css']
 })
 export class TechnicalAssessmentComponent implements OnInit {
-  public taskDetail: Object = {};
+  public taskDetail: Task;
+  public requestDetail: Request;
   public techDrawingModel = 'NO';
   public targetConfList = [];
   public expandAllTargetConfigs = false;
@@ -23,22 +27,25 @@ export class TechnicalAssessmentComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private requestService: RequestService,
     private taskService: TaskService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(
-      params => this.loadTask(params.taskId));
+    this.route.params.subscribe(params => this.loadTask(params.taskId));
     //
     this.targetConfList = this.getTargetConfigurationData();
   }
 
-  private loadTask(taskId) {
+  private loadTask(taskId: string) {
     this.taskService.getTask(taskId)
-      .subscribe(task => this.taskDetail = task[0]);
+      .subscribe(task => {
+        this.taskDetail = task[0];
+        this.requestService.getRequest(this.taskDetail.REQUEST)
+          .subscribe(request => this.requestDetail = request[0])
+      });
   }
 
   goToTaskList (e) {
-    console.log('To to task list ..', e);
     this.router.navigate(['/tali']);
   }
 

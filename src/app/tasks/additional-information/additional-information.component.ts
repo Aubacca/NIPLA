@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
 import { TaskService } from './../../services/task.service';
+import { Task } from './../../modules/task';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AdditionalInformationComponent implements OnInit {
   private taskId: string;
-  public taskDetail: any = null;
+  public taskDetail: Task = null;
   private dueDate = new Date();
 
   constructor(
@@ -26,19 +27,14 @@ export class AdditionalInformationComponent implements OnInit {
     //
     this.route.params.subscribe(
       params => {
-        console.log('AdditionalInformationComponent params=', params);
         this.taskId = params.taskId;
         //
         this.taskService.getTask(this.taskId)
-          .subscribe(task => {
-            console.log('AdditionalInformationComponent task=', task);
-            this.taskDetail = task[0];
-          });
+          .subscribe(task => this.taskDetail = task[0]);
       });
   }
 
   goToTaskList (e) {
-    console.log('To to task list ..', e);
     this.router.navigate(['/tali']);
   }
 }

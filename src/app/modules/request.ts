@@ -1,9 +1,11 @@
 export interface Request {
-    ID: number;
+    ID: string;
     REQUEST_TYPE: string;
-    REQUEST: number;
-    TASK_OWNER: string;
-    STATUS: string;
+    NAME: string;
+    FG: string;
+    REQUEST_OWNER: string;
+    REQUEST: string;
     PRIORITY: string;
-    CREATE_DATE: string;
+    STATUS: string;
+    CREATION_DATE: string;
 }

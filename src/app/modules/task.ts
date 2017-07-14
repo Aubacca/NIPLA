@@ -1,9 +1,11 @@
 export interface Task {
-    ID: number;
+    ID: string;
     TYPE: string;
-    REQUEST: number;
+    NAME: string;
+    FG: string;
     TASK_OWNER: string;
-    STATUS: string;
+    REQUEST: string;
     PRIORITY: string;
-    CREATE_DATE: string;
+    STATUS: string;
+    CREATION_DATE: string;
 }
