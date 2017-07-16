@@ -3,5 +3,98 @@
     <h5><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Actions Overview</h5>
   </div>
   <div class="panel-body">
+    <form class="search-form">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" id="exampleInputAmount" #searchText placeholder="What are you searching for?">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+        </div>
+      </div>
+    </form>
+    <hr>
+
+    <table class="table table-striped"
+      [mfData]="eventActions" #mf="mfDataTable"
+      [mfActivePage]="3"
+      [mfRowsOnPage]="5">
+      <thead>
+        <tr>
+          <th>
+            <mfDefaultSorter by="ID"><input type="checkbox" title="Mark to select/unselect all visible Requests"></mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="event">Event</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="action">Action</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="request">Request</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="country">Country</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="priority">Priority</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="primaryRequestType">Primary Request Type</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="phase">Phase</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="receiptDate">Receipt Date</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="dueDate">Due Date</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="user">User</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="role">Role</mfDefaultSorter>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eventAction of mf.data">
+          <td><input type="checkbox"> </td>
+          <td>{{eventAction.event}}</td>
+          <td>{{eventAction.action}}</td>
+          <td><a [routerLink]="['/coco/requestDetails', eventAction.request]" [queryParams]="{debug: true}">{{eventAction.request}}</a></td>
+          <td>{{eventAction.country}}</td>
+          <td>{{eventAction.priority}}</td>
+          <td>{{eventAction.primaryRequestType}}</td>
+          <td>{{eventAction.phase}}</td>
+          <td>{{eventAction.receiptDate}}</td>
+          <td>{{eventAction.dueDate}}</td>
+          <td>{{eventAction.user}}</td>
+          <td>{{eventAction.role}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="12">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25, 50]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+  </div>
+  <div class="panel-footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-6">
+          <button class="btn btn-default">Set Markers</button>
+        </div>
+        <div class="col-xs-6">
+          <span class="pull-right">
+            <button class="btn btn-primary">Confirm</button>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
