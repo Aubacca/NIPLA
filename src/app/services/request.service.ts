@@ -7,20 +7,21 @@ import { Request } from '../modules/request';
 
 @Injectable()
 export class RequestService {
-  private url_alpin_data = 'assets/alpin2-data.json';
+//  private url_alpin_data = 'assets/alpin2-data.json';
+  private url_alpin_data = 'http://localhost:3000/requests';
+
   constructor(private http: Http) { }
 
   public getRequests(): Observable<any> {
     return this.http.get(this.url_alpin_data)
       // Call map on the response observable to get the parsed people object
-      .map(res => res.json().requests);
+      .map(res => res.json());
   }
 
   public getRequest(requestId: string): Observable<Request> {
-    return this.http.get(this.url_alpin_data)
+    return this.http.get(this.url_alpin_data + '?REQUEST=' + requestId)
       // Call map on the response observable to get the parsed people object
-      .map(res => res.json().requests
-        .filter(request => request.REQUEST === requestId));
+      .map(res => res.json());
   }
 
   public getRaces(

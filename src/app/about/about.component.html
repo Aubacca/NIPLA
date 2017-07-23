@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">About ALPIN2</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <img src="../../assets/images/alpin.png" alt="alpin" class="img-responsive img-center">
+        <span class="app-title">ALPIN2 - <i>Artworks and Labeling Process Implementation</i></span>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div>Logged in User: <b class="text-danger">{{userInfo.firstName}} {{userInfo.lastName}}</b></div>
+        User Assigned Roles:
+        <ul>
+          <li *ngFor="let role of userInfo.assignedRoles"><b>{{role}}</b></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        Version Overview:
+        <div>ALPIN2: <b>0.1.0</b></div>
+        Application Libs:
+        <ul>
+          <li>Angular: <b>4.0.0</b></li>
+          <li>Bootstrap: <b>3.3.7</b></li>
+          <li>...</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <div class="pull-left">Implemented with: ngx-bootstrap</div>
+  <button type="button" class="btn btn-primary" (click)="bsModalRef.hide()">Close</button>
+</div>

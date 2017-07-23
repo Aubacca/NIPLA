@@ -14,6 +14,8 @@ import { TechnicalAssessmentComponent } from './tasks/technical-assessment/techn
 import { CorqComponent } from './coco/corq/corq.component';
 import { CocoComponent } from './coco/coco.component';
 import { RequestDetailComponent } from './coco/request-detail/request-detail.component';
+import { AboutComponent } from './about/about.component';
+import { RemaComponent } from './rema/rema.component';
 
 
 const routes: Routes = [
@@ -34,7 +36,8 @@ const routes: Routes = [
     {path: 'additionalInformation/:taskId', component: AdditionalInformationComponent},
     {path: 'technicalAssessment/:taskId', component: TechnicalAssessmentComponent},
   ]},
-
+  {path: 'about', component: AboutComponent},
+  {path: 'rema', component: RemaComponent},
 ];
 
 @NgModule({

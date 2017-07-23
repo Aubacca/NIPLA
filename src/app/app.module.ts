@@ -11,6 +11,7 @@ import { ButtonsModule } from 'ng2-bootstrap/buttons';
 import { Ng2TableModule } from 'ng2-table/ng2-table';
 import { TabsModule } from 'ng2-bootstrap/tabs';
 import { DataTableModule } from 'angular2-datatable';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 // App routing.
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { RequestService } from './services/request.service';
 import { TaskService } from './services/task.service';
 // App components.
 import { AppComponent } from './app.component';
+import { AboutComponent } from './about/about.component';
 import { ActionOverviewComponent } from './coco/action-overview/action-overview.component';
 import { AdditionalInformationComponent } from './tasks/additional-information/additional-information.component';
 import { BundlingOverviewComponent } from './coco/bundling-overview/bundling-overview.component';
@@ -30,6 +32,7 @@ import { ImcoComponent } from './imco/imco.component';
 import { Ng2DatatableComponent } from './ng2-datatable/ng2-datatable.component';
 import { Ng2TableDemoComponent } from './ng2-table-demo/ng2-table-demo.component';
 import { ParentOverviewComponent } from './coco/parent-overview/parent-overview.component';
+import { RemaComponent } from './rema/rema.component';
 import { RequestDetailComponent } from './coco/request-detail/request-detail.component';
 import { RequestDetailFgComponent } from './coco/request-detail/request-detail-fg/request-detail-fg.component';
 import { RequestDetailPpmComponent } from './coco/request-detail/request-detail-ppm/request-detail-ppm.component';
@@ -44,6 +47,7 @@ import { TechnicalAssessmentComponent } from './tasks/technical-assessment/techn
 @NgModule({
   declarations: [
     ActionOverviewComponent,
+    AboutComponent,
     AdditionalInformationComponent,
     AppComponent,
     BundlingOverviewComponent,
@@ -54,6 +58,7 @@ import { TechnicalAssessmentComponent } from './tasks/technical-assessment/techn
     Ng2DatatableComponent,
     Ng2TableDemoComponent,
     ParentOverviewComponent,
+    RemaComponent,
     RequestOverviewComponent,
     RequestDetailComponent,
     RequestDetailFgComponent,
@@ -75,7 +80,8 @@ import { TechnicalAssessmentComponent } from './tasks/technical-assessment/techn
     PaginationModule.forRoot(),
     TabsModule.forRoot(),
     Ng2TableModule,
-    DataTableModule
+    DataTableModule,
+    ModalModule.forRoot()
   ],
   providers: [
     EventActionsService,

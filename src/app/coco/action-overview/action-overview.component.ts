@@ -41,7 +41,7 @@ export class ActionOverviewComponent implements OnInit {
       .subscribe(eventActions => {
         this.eventActions = eventActions;
       },
-    error => console.error(error),
+    error => console.error('ERROR: ', error),
     () => 'Event actions subscription ended.');
   }
 }

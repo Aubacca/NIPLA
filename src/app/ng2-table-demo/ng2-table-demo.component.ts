@@ -24,7 +24,8 @@ export class Ng2TableDemoComponent implements OnInit {
     },
     {title: 'Office', className: ['office-header', 'text-success'], name: 'office', sort: 'asc'},
     {title: 'Extn.', name: 'ext', sort: '', filtering: {filterString: '', placeholder: 'Filter by Extn.'}},
-    {title: 'Start date', className: 'text-warning', name: 'startDate'},
+    {title: 'Start date', className: 'text-warning', name: 'startDate'
+      , filtering: {filterString: '', placeholder: 'Filter by Start Date'}},
     {title: 'Salary ($)', name: 'salary'}
   ];
   public page = 1;
