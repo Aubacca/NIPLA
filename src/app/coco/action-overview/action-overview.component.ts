@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { EventAction } from '../../modules/event-action';
 import { EventActionsService } from '../../services/event-actions.service';
@@ -8,7 +8,7 @@ import { EventActionsService } from '../../services/event-actions.service';
   templateUrl: './action-overview.component.html',
   styleUrls: ['./action-overview.component.css']
 })
-export class ActionOverviewComponent implements OnInit {
+export class ActionOverviewComponent implements OnInit, OnDestroy {
   eventActions: EventAction[] = [];
   private eventActionsSubscription;
 

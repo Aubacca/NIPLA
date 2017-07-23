@@ -7,7 +7,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  public userInfo = <any>{}
+  public userInfo = <any>{};
 
   constructor(public bsModalRef: BsModalRef) { }
 
