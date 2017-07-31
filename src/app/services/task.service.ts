@@ -60,8 +60,17 @@ export class TaskService {
 */
 
   public getTask(taskId: string) {
-    return this.http.get(this.url_tasks + '?ID=' + taskId)
+    return this.http.get(this.url_tasks + '?id=' + taskId)
       .map(res => res.json())
       .first();
+  }
+
+  public updateTask (taskId: string, data) {
+    let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      headers.append('Accept', 'application/json');
+    //
+    return this.http.put(this.url_tasks + '/' + taskId, JSON.stringify(data), {headers: headers})
+      .map(res => res.json());
   }
 }

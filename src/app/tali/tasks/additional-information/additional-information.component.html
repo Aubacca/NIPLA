@@ -27,8 +27,8 @@
         <div accordion-heading>
           <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Question
         </div>
-        <div class="form-group">
-          <textarea class="form-control" rows="5" id="question" disabled>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sed inventore voluptatibus tempora aspernatur ut aperiam, voluptates, tempore debitis officiis odio mollitia quidem quod eaque animi assumenda veritatis adipisci at?
+        <div class="form-group" *ngIf="taskDetail">
+          <textarea class="form-control" rows="5" id="question" disabled [(ngModel)]="taskDetail.question">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sed inventore voluptatibus tempora aspernatur ut aperiam, voluptates, tempore debitis officiis odio mollitia quidem quod eaque animi assumenda veritatis adipisci at?
           </textarea>
         </div> 
       </accordion-group>
@@ -53,8 +53,8 @@
         <div accordion-heading>
           <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Answer
         </div>
-        <div class="form-group">
-          <textarea class="form-control" rows="5" id="answer"></textarea>
+        <div class="form-group" *ngIf="taskDetail">
+          <textarea class="form-control" rows="5" id="answer" [(ngModel)]="taskDetail.answer"></textarea>
         </div> 
       </accordion-group>
       <accordion-group [isOpen]="false" #group>
@@ -68,7 +68,8 @@
   <div class="panel-footer">
     <div class="row">
       <div class="col-xs-6"><button type="button" class="btn btn-default pull-left" (click)="goToTaskList($event)">Close without Saving</button></div>
-      <div class="col-xs-6"><button type="submit" class="btn btn-primary pull-right" (click)="goToTaskList($event)">
+      <div class="col-xs-6"><button type="submit" class="btn btn-primary pull-right"
+         (click)="doSubmit($event)">
         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Submit
       </button></div>
     </div>

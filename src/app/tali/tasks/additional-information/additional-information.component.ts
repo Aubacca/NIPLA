@@ -34,4 +34,16 @@ export class AdditionalInformationComponent implements OnInit {
   goToTaskList (e) {
     this.router.navigate(['/tali']);
   }
+
+  doSubmit(e) {
+    console.log('taskDetail=', this.taskDetail);
+    console.log('this.taskId=', this.taskId);
+    this.taskService.updateTask(this.taskId, this.taskDetail)
+      .subscribe(resp => {
+        console.log('resp=', resp);
+        this.taskDetail = resp[0];
+        this.taskDetail = resp;
+        console.log('this.taskDetail=', this.taskDetail);
+      });
+  }
 }
