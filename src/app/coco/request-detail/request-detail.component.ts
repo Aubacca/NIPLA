@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { RequestService } from '../../services/request.service';
-import { Request } from '../../modules/request';
+import { Request } from '../../models/request';
 
 @Component({
   selector: 'app-request-detail',

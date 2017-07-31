@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Request } from '../../modules/request';
+import { Request } from '../../../../models/request';
 
 @Component({
   selector: 'app-request-detail-view',

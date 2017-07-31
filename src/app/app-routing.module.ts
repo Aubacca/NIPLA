@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { Ng2TableDemoComponent } from './ng2-table-demo/ng2-table-demo.component';
-import { Ng2DatatableComponent } from './ng2-datatable/ng2-datatable.component';
+import { Ng2TableDemoComponent } from './demo/ng2-table-demo/ng2-table-demo.component';
+import { Ng2DatatableComponent } from './demo/ng2-datatable/ng2-datatable.component';
+import { JqxGritSampleComponent } from './demo/jqx-grit-sample/jqx-grit-sample.component';
 
 import { HomeComponent } from './home/home.component';
 import { TaliComponent } from './tali/tali.component';
 import { ImcoComponent } from './imco/imco.component';
-import { AdditionalInformationComponent } from './tasks/additional-information/additional-information.component';
+import { AdditionalInformationComponent } from './tali/tasks/additional-information/additional-information.component';
 
-import { TechnicalAssessmentComponent } from './tasks/technical-assessment/technical-assessment.component';
+import { TechnicalAssessmentComponent } from './tali/tasks/technical-assessment/technical-assessment.component';
 
 import { CorqComponent } from './coco/corq/corq.component';
 import { CocoComponent } from './coco/coco.component';
@@ -29,8 +30,12 @@ const routes: Routes = [
   {path: 'corq/:request', component: CorqComponent},
   {path: 'tali', component: TaliComponent},
   {path: 'imco', component: ImcoComponent},
-  {path: 'tableDemo', component: Ng2TableDemoComponent},
-  {path: 'dataTable', component: Ng2DatatableComponent},
+  {path: 'demo',
+  children: [
+    {path: 'tableDemo', component: Ng2TableDemoComponent},
+    {path: 'dataTable', component: Ng2DatatableComponent},
+    {path: 'jqxGrit', component: JqxGritSampleComponent},
+    ]},
   {path: 'tasks',
   children: [
     {path: 'additionalInformation/:taskId', component: AdditionalInformationComponent},

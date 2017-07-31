@@ -1,5 +1,5 @@
 export interface Request {
-    ID: string;
+    id: string;
     REQUEST_TYPE: string;
     NAME: string;
     FG: string;

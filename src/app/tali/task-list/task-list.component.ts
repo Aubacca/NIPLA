@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective } from 'ng2-table/ng2-table';
+import { NgTableComponent,
+  NgTableFilteringDirective,
+  NgTablePagingDirective,
+  NgTableSortingDirective } from 'ng2-table/ng2-table';
 
 
 import { TaskService } from '../../services/task.service';
-import { Task } from '../../modules/task';
+import { Task } from '../../models/task';
 
 @Component({
   selector: 'app-task-list',
@@ -80,11 +83,11 @@ export class TaskListComponent implements OnInit {
   public onTaskTypeSelected(e, task) {
     switch (task.TYPE) {
       case this.ADD_INFO:
-        this.router.navigate(['/tasks/additionalInformation', task.ID]);
+        this.router.navigate(['/tasks/additionalInformation', task.id]);
         break;
 
       case this.TECHNICAL_ASSESSMENT:
-        this.router.navigate(['/tasks/technicalAssessment', task.ID]);
+        this.router.navigate(['/tasks/technicalAssessment', task.id]);
         break;
 
       default:

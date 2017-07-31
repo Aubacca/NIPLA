@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 
-import { EventAction } from '../modules/event-action';
+import { EventAction } from '../models/event-action';
 
 @Injectable()
 export class EventActionsService {

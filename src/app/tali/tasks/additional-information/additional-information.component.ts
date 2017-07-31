@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
-import { TaskService } from './../../services/task.service';
-import { Task } from './../../modules/task';
+import { TaskService } from './../../../services/task.service';
+import { Task } from './../../../models/task';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -15,7 +15,6 @@ import { Observable } from 'rxjs/Observable';
 export class AdditionalInformationComponent implements OnInit {
   private taskId: string;
   public taskDetail: Task = null;
-  private dueDate = new Date();
 
   constructor(
     private router: Router,
@@ -23,8 +22,6 @@ export class AdditionalInformationComponent implements OnInit {
     private taskService: TaskService) { }
 
   ngOnInit() {
-    this.dueDate.setDate(this.dueDate.getDate() + 10);
-    //
     this.route.params.subscribe(
       params => {
         this.taskId = params.taskId;

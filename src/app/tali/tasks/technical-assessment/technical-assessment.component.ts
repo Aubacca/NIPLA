@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { RequestService } from './../../services/request.service';
-import { TaskService } from './../../services/task.service';
-import { Request } from './../../modules/request';
-import { Task } from './../../modules/task';
+import { RequestService } from './../../../services/request.service';
+import { TaskService } from './../../../services/task.service';
+import { Request } from './../../../models/request';
+import { Task } from './../../../models/task';
 
 
 @Component({

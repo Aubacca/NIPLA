@@ -14,6 +14,6 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
     this.userInfo.firstName = 'John';
     this.userInfo.lastName = 'Doe';
-    this.userInfo.assignedRoles = ['PAO', 'AW Creator', 'PDF Proof Read', 'CMO Quality'];
+    this.userInfo.assignedRoles = ['AW Creator', 'CMO Quality', 'PAO', 'PDF Proof Read'];
   }
 }

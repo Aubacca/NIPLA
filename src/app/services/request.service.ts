@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 
-import { Request } from '../modules/request';
+import { Request } from '../models/request';
 
 @Injectable()
 export class RequestService {

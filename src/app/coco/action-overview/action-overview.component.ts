@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { EventAction } from '../../modules/event-action';
+import { EventAction } from '../../models/event-action';
 import { EventActionsService } from '../../services/event-actions.service';
 
 @Component({

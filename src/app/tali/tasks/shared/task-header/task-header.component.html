@@ -1,0 +1,14 @@
+<b>Task Details</b>
+<div *ngIf="taskData">
+  <div class="row">
+    <div class="col-xs-3">Task Type: <b>{{taskData.TYPE}}</b></div>
+    <div class="col-xs-3">Owner: <b>{{taskData.TASK_OWNER}}</b></div>
+    <div class="col-xs-3">Priority: <b>{{taskData.PRIORITY}}</b></div>
+    <div class="col-xs-3">Due Date: <b>{{dueDate | date: 'shortDate'}}</b></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">Task ID: <b>{{taskData.id}}</b></div>
+    <div class="col-xs-3">Status: <b>{{taskData.STATUS}}</b></div>
+    <div class="col-xs-3">Receive Date: <b>{{taskData.CREATION_DATE}}</b></div>
+  </div>
+</div>

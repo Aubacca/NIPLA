@@ -5,26 +5,13 @@
     </div>
   </div>
   <div class="panel-body">
-    <b>Task Details</b>
-    <div *ngIf="taskDetail">
-      <div class="row">
-        <div class="col-xs-3">Task Type: <b>{{taskDetail.TYPE}}</b></div>
-        <div class="col-xs-3">Owner: <b>{{taskDetail.TASK_OWNER}}</b></div>
-        <div class="col-xs-3">Priority: <b>{{taskDetail.PRIORITY}}</b></div>
-        <div class="col-xs-3">Due Date: <b>{{dueDate | date:'dd/MM/yyyy'}}</b></div>
-      </div>
-      <div class="row">
-        <div class="col-xs-6">Task ID: <b>{{taskDetail.ID}}</b></div>
-        <div class="col-xs-3">Status: <b>{{taskDetail.STATUS}}</b></div>
-        <div class="col-xs-3">Receive Date: <b>{{taskDetail.CREATION_DATE}}</b></div>
-      </div>
-    </div>
+    <app-task-header [taskData]="taskDetail"></app-task-header>
     <hr>
     <app-request-detail-view [requestDetail]="requestDetail"></app-request-detail-view>
     <hr>
     <app-task-assigned-docs></app-task-assigned-docs>
     <hr>
-    <div class="container-fluid">
+    <div class="container-fluid2">
       <b>Target Configuration</b>
       <div class="row">
         <div class="col-xs-6">
@@ -58,7 +45,7 @@
       </div>
     </div>
     <hr>
-    <div class="container-fluid">
+    <div class="container-fluid2">
       <b>Notes</b>
       <div class="form-group">
         <div class="row">
