@@ -10,11 +10,13 @@ export class TaskService {
 //  private url_tasks = 'http://www.mocky.io/v2/59512cfc12000078128c7ab3';
 //  private url_tasks = 'assets/alpin2-data.json';
   private url_tasks = 'http://localhost:3000/tasks';
+  private headers: Headers;
 
 
   people: any[];
 
   constructor(private http: Http) {
+    this.headers = new Headers({ 'Accept': 'application/json' });
   }
 
   getTasks(): Observable<any> {
@@ -59,9 +61,14 @@ export class TaskService {
   }
 */
 
-  public getTask(taskId: string) {
-    return this.http.get(this.url_tasks + '?ID=' + taskId)
+  public getTask(taskId: string): Observable<any> {
+    return this.http.get(this.url_tasks + '?id=' + taskId)
       .map(res => res.json())
       .first();
+  }
+
+  public updateTask (taskId: string, data): Observable<any> {
+    return this.http.put(this.url_tasks + '/' + taskId, data, {headers: this.headers})
+      .map(res => res.json());
   }
 }
